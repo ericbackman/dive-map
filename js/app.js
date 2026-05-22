@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const loading = document.getElementById('loading');
 
   try {
-    const response = await fetch('data/dives.json');
+    const response = await fetch(`data/dives.json?v=${Date.now()}`);
     const data = await response.json();
 
     DiveMap.init().loadDives(data.dives);
