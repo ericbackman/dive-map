@@ -1,7 +1,8 @@
 const DiveMap = {
   map: null,
   markers: [],
-  markerLayer: null,
+  clusterGroup: null,
+  trips: {},
 
   init() {
     this.map = L.map('map', {
@@ -19,9 +20,45 @@ const DiveMap = {
       maxZoom: 20,
     }).addTo(this.map);
 
-    this.markerLayer = L.layerGroup().addTo(this.map);
+    this.clusterGroup = L.markerClusterGroup({
+      maxClusterRadius: 50,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      zoomToBoundsOnClick: true,
+      disableClusteringAtZoom: 12,
+      iconCreateFunction: (cluster) => this.createClusterIcon(cluster),
+    });
+
+    this.map.addLayer(this.clusterGroup);
 
     return this;
+  },
+
+  createClusterIcon(cluster) {
+    const childMarkers = cluster.getAllChildMarkers();
+    const count = childMarkers.length;
+
+    const tripIds = new Set(childMarkers.map(m => m.options.diveData?.trip).filter(Boolean));
+    let label = count + ' dives';
+
+    if (tripIds.size === 1) {
+      const tripId = [...tripIds][0];
+      const trip = this.trips[tripId];
+      if (trip) label = trip.name;
+    } else if (tripIds.size > 1) {
+      label = tripIds.size + ' trips';
+    }
+
+    const size = count > 20 ? 56 : count > 10 ? 48 : 40;
+
+    return L.divIcon({
+      html: `<div class="cluster-icon" style="width:${size}px;height:${size}px;">
+        <span class="cluster-count">${count}</span>
+        <span class="cluster-label">${label}</span>
+      </div>`,
+      className: 'dive-cluster',
+      iconSize: [size, size + 16],
+    });
   },
 
   createPinIcon(type) {
@@ -31,6 +68,7 @@ const DiveMap = {
       wall: '\u{1F30A}',
       cave: '\u{1F573}',
       cenote: '\u{1F4A7}',
+      night: '\u{1F31A}',
       crater: '\u{1F30B}',
       sinkhole: '\u{1F573}',
       freshwater: '\u{2744}',
@@ -50,57 +88,79 @@ const DiveMap = {
   },
 
   buildPopupHTML(dive) {
-    const stars = '★'.repeat(dive.rating || 0) + '☆'.repeat(5 - (dive.rating || 0));
+    const depthStr = dive.depth_m ? dive.depth_m + 'm' : '—';
+    const durationStr = dive.duration_min ? dive.duration_min + ' min' : '—';
+    const dateStr = dive.date || '—';
+    const typeStr = dive.type || '—';
+
     const tags = (dive.highlights || [])
       .map(h => `<span class="popup-tag">${h}</span>`)
       .join('');
 
+    const tripInfo = dive.trip && this.trips[dive.trip]
+      ? `<div class="popup-trip">${this.trips[dive.trip].name}</div>`
+      : '';
+
+    const notesHtml = dive.notes
+      ? `<div class="popup-notes">${dive.notes}</div>`
+      : '';
+
     return `
+      ${tripInfo}
       <div class="popup-site">${dive.site}</div>
       <div class="popup-location">${dive.location}</div>
       <div class="popup-details">
         <div class="popup-detail">
           <div class="popup-detail-label">Depth</div>
-          <div>${dive.depth_m ? dive.depth_m + 'm' : '—'}</div>
+          <div>${depthStr}</div>
         </div>
         <div class="popup-detail">
-          <div class="popup-detail-label">Type</div>
-          <div>${dive.type || '—'}</div>
+          <div class="popup-detail-label">Duration</div>
+          <div>${durationStr}</div>
         </div>
         <div class="popup-detail">
           <div class="popup-detail-label">Date</div>
-          <div>${dive.date || '—'}</div>
+          <div>${dateStr}</div>
         </div>
         <div class="popup-detail">
-          <div class="popup-detail-label">Rating</div>
-          <div class="popup-rating">${stars}</div>
+          <div class="popup-detail-label">Type</div>
+          <div>${typeStr}</div>
         </div>
       </div>
+      ${notesHtml}
       ${tags ? `<div class="popup-tags">${tags}</div>` : ''}
     `;
   },
 
+  loadTrips(trips) {
+    this.trips = {};
+    if (trips) {
+      trips.forEach(t => { this.trips[t.id] = t; });
+    }
+    return this;
+  },
+
   loadDives(dives) {
-    this.markerLayer.clearLayers();
+    this.clusterGroup.clearLayers();
     this.markers = [];
 
     dives.forEach(dive => {
       const marker = L.marker([dive.lat, dive.lng], {
         icon: this.createPinIcon(dive.type),
+        diveData: dive,
       });
 
       marker.bindPopup(this.buildPopupHTML(dive), {
-        maxWidth: 280,
+        maxWidth: 300,
         closeButton: true,
       });
 
       marker.on('click', () => {
-        this.map.flyTo([dive.lat, dive.lng], Math.max(this.map.getZoom(), 8), {
-          duration: 1,
-        });
+        const targetZoom = Math.max(this.map.getZoom(), 10);
+        this.map.flyTo([dive.lat, dive.lng], targetZoom, { duration: 1 });
       });
 
-      this.markerLayer.addLayer(marker);
+      this.clusterGroup.addLayer(marker);
       this.markers.push({ marker, dive });
     });
 
