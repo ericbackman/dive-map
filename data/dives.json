@@ -161,6 +161,32 @@
       "highlights": ["off the beaten path", "seahorses", "macro life"],
       "rating": null,
       "media": []
+    },
+    {
+      "id": 13,
+      "site": "Big Island",
+      "location": "Hawaii, USA",
+      "lat": 19.6400,
+      "lng": -155.9969,
+      "depth_m": null,
+      "date": null,
+      "type": "reef",
+      "highlights": ["manta rays", "lava formations", "tropical fish"],
+      "rating": null,
+      "media": []
+    },
+    {
+      "id": 14,
+      "site": "Islas del Rosario",
+      "location": "Cartagena, Colombia",
+      "lat": 10.1753,
+      "lng": -75.7461,
+      "depth_m": null,
+      "date": null,
+      "type": "reef",
+      "highlights": ["coral reefs", "marine sanctuary", "warm water"],
+      "rating": null,
+      "media": []
     }
   ]
 }
