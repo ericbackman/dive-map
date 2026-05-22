@@ -5,9 +5,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch(`data/dives.json?v=${Date.now()}`);
     const data = await response.json();
 
-    DiveMap.init().loadDives(data.dives);
+    DiveMap.init()
+      .loadTrips(data.trips)
+      .loadDives(data.dives);
 
     document.getElementById('dive-count').textContent = data.dives.length;
+
+    const tripCount = data.trips ? data.trips.length : 0;
+    document.getElementById('trip-count').textContent = tripCount;
+
     document.getElementById('country-count').textContent = new Set(
       data.dives.map(d => d.location.split(',').pop().trim())
     ).size;
