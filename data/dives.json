@@ -1,0 +1,140 @@
+{
+  "diver": {
+    "name": "Eric Backman",
+    "totalDives": 150,
+    "certification": "",
+    "favoriteSites": []
+  },
+  "dives": [
+    {
+      "id": 1,
+      "site": "Blue Corner",
+      "location": "Palau, Micronesia",
+      "lat": 7.0833,
+      "lng": 134.2667,
+      "depth_m": 30,
+      "date": null,
+      "type": "wall",
+      "highlights": ["sharks", "barracuda", "drift dive"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 2,
+      "site": "USS Liberty Wreck",
+      "location": "Tulamben, Bali, Indonesia",
+      "lat": -8.2764,
+      "lng": 115.5942,
+      "depth_m": 30,
+      "type": "wreck",
+      "date": null,
+      "highlights": ["wreck", "coral", "macro life"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 3,
+      "site": "Great Blue Hole",
+      "location": "Belize",
+      "lat": 17.3156,
+      "lng": -87.5347,
+      "depth_m": 40,
+      "date": null,
+      "type": "sinkhole",
+      "highlights": ["stalactites", "reef sharks", "unique geology"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 4,
+      "site": "Manta Point",
+      "location": "Nusa Penida, Bali, Indonesia",
+      "lat": -8.7372,
+      "lng": 115.4472,
+      "depth_m": 15,
+      "date": null,
+      "type": "reef",
+      "highlights": ["manta rays", "cleaning station"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 5,
+      "site": "Silfra Fissure",
+      "location": "Thingvellir, Iceland",
+      "lat": 64.2559,
+      "lng": -21.1147,
+      "depth_m": 18,
+      "date": null,
+      "type": "freshwater",
+      "highlights": ["crystal visibility", "tectonic plates", "cold water"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 6,
+      "site": "Barracuda Point",
+      "location": "Sipadan Island, Malaysia",
+      "lat": 4.1147,
+      "lng": 118.6283,
+      "depth_m": 25,
+      "date": null,
+      "type": "reef",
+      "highlights": ["barracuda tornado", "turtles", "sharks"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 7,
+      "site": "Molokini Crater",
+      "location": "Maui, Hawaii, USA",
+      "lat": 20.6314,
+      "lng": -156.4958,
+      "depth_m": 20,
+      "date": null,
+      "type": "crater",
+      "highlights": ["visibility", "reef fish", "back wall"],
+      "rating": 4,
+      "media": []
+    },
+    {
+      "id": 8,
+      "site": "Cenote Dos Ojos",
+      "location": "Tulum, Mexico",
+      "lat": 20.3250,
+      "lng": -87.3903,
+      "depth_m": 10,
+      "date": null,
+      "type": "cenote",
+      "highlights": ["cave diving", "crystal water", "stalactites"],
+      "rating": 5,
+      "media": []
+    },
+    {
+      "id": 9,
+      "site": "Poor Knights Islands",
+      "location": "Northland, New Zealand",
+      "lat": -35.4736,
+      "lng": 174.7389,
+      "depth_m": 25,
+      "date": null,
+      "type": "reef",
+      "highlights": ["archways", "kelp forests", "nudibranch"],
+      "rating": 4,
+      "media": []
+    },
+    {
+      "id": 10,
+      "site": "Thistlegorm Wreck",
+      "location": "Red Sea, Egypt",
+      "lat": 27.8133,
+      "lng": 33.9217,
+      "depth_m": 30,
+      "date": null,
+      "type": "wreck",
+      "highlights": ["WWII wreck", "motorcycles", "train carriages"],
+      "rating": 5,
+      "media": []
+    }
+  ]
+}
