@@ -101,9 +101,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderVideosPage(data) {
     const container = document.getElementById('videos-content');
+    const bestVideos = data.bestVideos || [];
     const tripsWithVideos = (data.trips || []).filter(t => t.videos && t.videos.length > 0);
 
-    if (tripsWithVideos.length === 0) {
+    if (bestVideos.length === 0 && tripsWithVideos.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'videos-empty';
       empty.textContent = 'No dive videos uploaded yet. Check back soon!';
@@ -112,9 +113,90 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Count total videos
-    const totalVids = tripsWithVideos.reduce((sum, t) => sum + t.videos.length, 0);
+    const tripVids = tripsWithVideos.reduce((sum, t) => sum + t.videos.length, 0);
+    const totalVids = tripVids + bestVideos.length;
     document.getElementById('videos-subtitle').textContent =
       `${totalVids} clips from ${tripsWithVideos.length} trip${tripsWithVideos.length > 1 ? 's' : ''}`;
+
+    // ── Best Of section ──
+    if (bestVideos.length > 0) {
+      const bestSection = document.createElement('div');
+      bestSection.className = 'videos-best-of';
+
+      const bestHeader = document.createElement('div');
+      bestHeader.className = 'videos-best-header';
+
+      const bestTitle = document.createElement('h3');
+      bestTitle.className = 'videos-best-title';
+      bestTitle.textContent = 'Best Of';
+
+      const bestMeta = document.createElement('span');
+      bestMeta.className = 'videos-best-meta';
+      bestMeta.textContent = `${bestVideos.length} curated highlight${bestVideos.length > 1 ? 's' : ''}`;
+
+      bestHeader.appendChild(bestTitle);
+      bestHeader.appendChild(bestMeta);
+      bestSection.appendChild(bestHeader);
+
+      const bestGrid = document.createElement('div');
+      bestGrid.className = 'videos-grid videos-grid-best';
+
+      bestVideos.forEach(v => {
+        const card = document.createElement('div');
+        card.className = 'video-card video-card-best';
+
+        const thumb = document.createElement('div');
+        thumb.className = 'video-thumb';
+
+        const img = document.createElement('img');
+        img.src = `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`;
+        img.alt = v.title;
+        img.loading = 'lazy';
+
+        const playBtn = document.createElement('div');
+        playBtn.className = 'video-play-btn';
+        playBtn.textContent = '▶';
+
+        const mins = Math.floor(v.duration / 60);
+        const secs = v.duration % 60;
+        const dur = document.createElement('span');
+        dur.className = 'video-duration';
+        dur.textContent = mins > 0
+          ? `${mins}:${String(secs).padStart(2, '0')}`
+          : `0:${String(secs).padStart(2, '0')}`;
+
+        thumb.appendChild(img);
+        thumb.appendChild(playBtn);
+        thumb.appendChild(dur);
+
+        const cardTitle = document.createElement('div');
+        cardTitle.className = 'video-card-title';
+        cardTitle.textContent = v.title;
+
+        const cardTrip = document.createElement('div');
+        cardTrip.className = 'video-card-trip';
+        cardTrip.textContent = v.trip;
+
+        card.appendChild(thumb);
+        card.appendChild(cardTitle);
+        card.appendChild(cardTrip);
+        bestGrid.appendChild(card);
+
+        thumb.addEventListener('click', () => {
+          while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
+          iframe.frameBorder = '0';
+          iframe.allowFullscreen = true;
+          iframe.allow = 'autoplay; encrypted-media';
+          thumb.appendChild(iframe);
+          thumb.classList.add('playing');
+        });
+      });
+
+      bestSection.appendChild(bestGrid);
+      container.appendChild(bestSection);
+    }
 
     tripsWithVideos.forEach(trip => {
       const section = document.createElement('div');

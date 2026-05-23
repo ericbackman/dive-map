@@ -3,6 +3,10 @@
     "name": "Eric Backman",
     "totalDives": 156
   },
+  "bestVideos": [
+    {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66, "trip": "Raja Ampat"},
+    {"id": "q6re3ZNNLsE", "title": "Manta Rays Night Dive", "duration": 50, "trip": "Hawaii"}
+  ],
   "trips": [
     {
       "id": "hawaii-2022",
