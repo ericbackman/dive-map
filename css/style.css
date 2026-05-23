@@ -901,16 +901,22 @@ header {
   font-size: 0.9rem;
 }
 
-/* ─── Travel Path ─── */
-.travel-toggle {
+/* ─── Travel Paths — multi-trip panel ─── */
+
+/* Grouped panel: sits below zoom buttons on top-left */
+.travel-trips-panel {
   overflow: visible;
 }
 
+/* Each trip's toggle button */
 .travel-toggle-btn {
   display: flex !important;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px !important;
+  gap: 6px;
+  padding: 7px 14px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 155px;
   background: var(--ocean-deep) !important;
   color: var(--text-muted) !important;
   text-decoration: none !important;
@@ -918,29 +924,46 @@ header {
   font-size: 0.78rem;
   font-weight: 500;
   white-space: nowrap;
-  border: 1px solid rgba(26, 124, 173, 0.3);
+  line-height: 1.3 !important;
   cursor: pointer;
-  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: color 0.18s, background 0.18s;
+  /* Leaflet leaflet-bar adds border-bottom between siblings automatically */
 }
 
 .travel-toggle-btn:hover {
   color: var(--text) !important;
   background: var(--ocean-mid) !important;
-  border-color: var(--ocean-light);
 }
 
+/* Active state uses each trip's --trip-color CSS variable (set via JS) */
 .travel-toggle-btn.active {
-  background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light)) !important;
-  color: var(--foam) !important;
-  border-color: var(--ocean-light);
-  box-shadow: 0 0 14px rgba(26, 124, 173, 0.3);
+  background: var(--trip-color, var(--ocean-light)) !important;
+  color: #0a1628 !important;
+  font-weight: 600;
 }
 
 .travel-toggle-icon {
   font-size: 14px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
+/* ── Hub emoji marker (Neuchâtel anchor) ── */
+.travel-hub-emoji {
+  background: none !important;
+  border: none !important;
+}
+
+.travel-hub-icon {
+  font-size: 26px;
+  text-align: center;
+  line-height: 36px;
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+/* ── Stop markers ── */
 .travel-stop {
   background: none !important;
   border: none !important;
