@@ -90,7 +90,15 @@
       "region": "Seven Mile Beach / West Wall, Grand Cayman",
       "year": 2026,
       "dates": null,
-      "diveCount": 10
+      "diveCount": 10,
+      "videos": [
+        {"id": "tnkiR3C3Ho8", "title": "Clip 1", "duration": 46},
+        {"id": "bdAIGGOny18", "title": "Clip 2", "duration": 66},
+        {"id": "PmekfzSIGGU", "title": "Clip 3", "duration": 79},
+        {"id": "A1nk_4Fddd4", "title": "Clip 4", "duration": 48},
+        {"id": "HYGpR4NzTRE", "title": "Clip 5", "duration": 28},
+        {"id": "b8INHJXFypI", "title": "Clip 6", "duration": 31}
+      ]
     }
   ],
   "dives": [
