@@ -612,6 +612,62 @@ header {
   font-weight: 500;
 }
 
+/* ─── Best Of Videos ─── */
+.videos-best-of {
+  margin-bottom: 48px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(13, 59, 102, 0.4) 0%, rgba(255, 213, 79, 0.06) 100%);
+  border: 1px solid rgba(255, 213, 79, 0.2);
+  border-radius: 16px;
+}
+
+.videos-best-header {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 213, 79, 0.15);
+}
+
+.videos-best-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd54f;
+}
+
+.videos-best-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.videos-grid-best {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.video-card-best {
+  border-color: rgba(255, 213, 79, 0.2);
+}
+
+.video-card-best:hover {
+  border-color: rgba(255, 213, 79, 0.45);
+  box-shadow: 0 4px 24px rgba(255, 213, 79, 0.1);
+}
+
+.video-card-trip {
+  padding: 0 12px 10px;
+  font-size: 0.72rem;
+  color: var(--ocean-light);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .videos-best-of {
+    padding: 16px;
+  }
+
+  .videos-grid-best {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Videos Page ─── */
 .videos-trip-section {
   margin-bottom: 40px;
