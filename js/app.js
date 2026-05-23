@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       data.dives.map(d => d.location.split(',').pop().trim())
     ).size;
 
+    // Close video gallery on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') DiveMap.closeVideoGallery();
+    });
+
     setTimeout(() => {
       loading.classList.add('hidden');
       DiveMap.fitBounds();

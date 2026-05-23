@@ -105,6 +105,14 @@ const DiveMap = {
       ? `<div class="popup-notes">${dive.notes}</div>`
       : '';
 
+    const trip = dive.trip ? this.trips[dive.trip] : null;
+    const hasVideos = trip && trip.videos && trip.videos.length > 0;
+    const videoBtn = hasVideos
+      ? `<button class="popup-video-btn" onclick="DiveMap.openVideoGallery('${dive.trip}')">
+           🎬 ${trip.videos.length} dive videos
+         </button>`
+      : '';
+
     return `
       ${tripInfo}
       <div class="popup-site">${dive.site}</div>
@@ -129,6 +137,7 @@ const DiveMap = {
       </div>
       ${notesHtml}
       ${tags ? `<div class="popup-tags">${tags}</div>` : ''}
+      ${videoBtn}
     `;
   },
 
@@ -165,6 +174,89 @@ const DiveMap = {
     });
 
     return this;
+  },
+
+  openVideoGallery(tripId) {
+    const trip = this.trips[tripId];
+    if (!trip || !trip.videos || trip.videos.length === 0) return;
+
+    const modal = document.getElementById('video-modal');
+    const titleEl = document.getElementById('video-modal-trip');
+    const gridEl = document.getElementById('video-modal-grid');
+
+    titleEl.textContent = trip.name;
+
+    // Clear previous content
+    while (gridEl.firstChild) gridEl.removeChild(gridEl.firstChild);
+
+    // Build video cards with safe DOM methods
+    trip.videos.forEach(v => {
+      const mins = Math.floor(v.duration / 60);
+      const secs = v.duration % 60;
+      const durStr = mins > 0
+        ? `${mins}:${String(secs).padStart(2, '0')}`
+        : `0:${String(secs).padStart(2, '0')}`;
+
+      const card = document.createElement('div');
+      card.className = 'video-card';
+
+      const thumb = document.createElement('div');
+      thumb.className = 'video-thumb';
+      thumb.dataset.videoId = v.id;
+
+      const img = document.createElement('img');
+      img.src = `https://img.youtube.com/vi/${v.id}/mqdefault.jpg`;
+      img.alt = v.title;
+      img.loading = 'lazy';
+
+      const playBtn = document.createElement('div');
+      playBtn.className = 'video-play-btn';
+      playBtn.textContent = '▶';
+
+      const duration = document.createElement('span');
+      duration.className = 'video-duration';
+      duration.textContent = durStr;
+
+      thumb.appendChild(img);
+      thumb.appendChild(playBtn);
+      thumb.appendChild(duration);
+
+      const title = document.createElement('div');
+      title.className = 'video-card-title';
+      title.textContent = v.title;
+
+      card.appendChild(thumb);
+      card.appendChild(title);
+      gridEl.appendChild(card);
+
+      // Click-to-play: replace thumbnail with iframe
+      thumb.addEventListener('click', () => {
+        while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
+        iframe.frameBorder = '0';
+        iframe.allowFullscreen = true;
+        iframe.allow = 'autoplay; encrypted-media';
+        thumb.appendChild(iframe);
+        thumb.classList.add('playing');
+      });
+    });
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Close handlers
+    modal.querySelector('.video-modal-backdrop').onclick = () => this.closeVideoGallery();
+    modal.querySelector('.video-modal-close').onclick = () => this.closeVideoGallery();
+  },
+
+  closeVideoGallery() {
+    const modal = document.getElementById('video-modal');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    // Stop all playing videos by clearing iframes
+    const grid = document.getElementById('video-modal-grid');
+    while (grid.firstChild) grid.removeChild(grid.firstChild);
   },
 
   fitBounds() {
