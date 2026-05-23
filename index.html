@@ -30,6 +30,11 @@
       <span class="logo-icon">&#x1F30A;</span>
       <h1>Eric's <span>Dive Map</span></h1>
     </div>
+    <nav class="tab-nav" id="tab-nav">
+      <button class="tab-btn active" data-tab="map">Map</button>
+      <button class="tab-btn" data-tab="videos">Videos</button>
+      <button class="tab-btn" data-tab="log">Dive Log</button>
+    </nav>
     <div class="stats">
       <div><span id="dive-count" class="stat-value">0</span> dives</div>
       <div><span id="trip-count" class="stat-value">0</span> trips</div>
@@ -37,9 +42,56 @@
     </div>
   </header>
 
-  <div id="map"></div>
+  <!-- Tab 1: Map -->
+  <div id="map" class="tab-page tab-map active"></div>
 
   <aside class="sidebar" id="sidebar"></aside>
+
+  <!-- Tab 2: Videos -->
+  <section id="page-videos" class="tab-page tab-content-page">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>Dive Videos</h2>
+        <p class="page-subtitle" id="videos-subtitle">All underwater footage from dive trips</p>
+      </div>
+      <div id="videos-content"></div>
+    </div>
+  </section>
+
+  <!-- Tab 3: Dive Log -->
+  <section id="page-log" class="tab-page tab-content-page">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>Dive Log</h2>
+        <p class="page-subtitle"><span id="log-count">0</span> dives logged</p>
+      </div>
+      <div class="log-controls">
+        <div class="log-search-wrap">
+          <span class="log-search-icon">&#x1F50D;</span>
+          <input type="text" id="log-search" class="log-search"
+                 placeholder="Search sites, locations, trips, highlights...">
+        </div>
+        <div class="log-filters" id="log-filters"></div>
+      </div>
+      <div class="log-table-wrap">
+        <table class="log-table" id="log-table">
+          <thead>
+            <tr>
+              <th class="log-th-sortable" data-sort="site">Site</th>
+              <th class="log-th-sortable" data-sort="location">Location</th>
+              <th class="log-th-sortable" data-sort="trip">Trip</th>
+              <th class="log-th-sortable" data-sort="depth_m">Depth</th>
+              <th class="log-th-sortable" data-sort="date">Date</th>
+              <th>Type</th>
+              <th>Highlights</th>
+            </tr>
+          </thead>
+          <tbody id="log-tbody"></tbody>
+        </table>
+        <div class="log-empty" id="log-empty" style="display:none;">No dives match your search.</div>
+      </div>
+    </div>
+  </section>
 
   <!-- Video Gallery Modal -->
   <div id="video-modal" class="video-modal">
