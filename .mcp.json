@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "youtube": {
+      "command": "C:\\Users\\ericb\\tools\\youtube-mcp\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "youtube_mcp.server"],
+      "cwd": "C:\\Users\\ericb\\tools\\youtube-mcp"
+    }
+  }
+}

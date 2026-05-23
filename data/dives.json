@@ -14,7 +14,27 @@
       "region": "Kona Coast, Big Island, Hawaii",
       "year": 2022,
       "dates": "December 4-7, 2022",
-      "diveCount": 5
+      "diveCount": 5,
+      "videos": [
+        {"id": "JcJwEpQhxJg", "title": "Manta Ray Night Dive", "duration": 44},
+        {"id": "q6re3ZNNLsE", "title": "Manta Rays Night Dive", "duration": 50},
+        {"id": "c46Aj6g_BY0", "title": "Octopus On Coral Reef", "duration": 40},
+        {"id": "UweymKHoRNU", "title": "Octopus Hiding", "duration": 15},
+        {"id": "U7-1yWaDaEI", "title": "Underwater Lava Tube", "duration": 28},
+        {"id": "8Yy4TO5zU1A", "title": "Cave Diving In Hawaii", "duration": 21},
+        {"id": "OG6gCwLvAaw", "title": "Moray Eel On Coral Reef", "duration": 46},
+        {"id": "NANKd6LSJJE", "title": "Hawaii Coral Reef With Yellow Tangs", "duration": 20},
+        {"id": "21CjV_M_AJw", "title": "Trumpetfish Over Coral Reef", "duration": 11},
+        {"id": "ze_5yTfOGA8", "title": "Touching Reef Organism", "duration": 47},
+        {"id": "yYIjEstRnS8", "title": "Hawaiian Reef Landscape", "duration": 39},
+        {"id": "j2BLUeDG0Xc", "title": "Rocky Reef With Corals", "duration": 40},
+        {"id": "ixxCXNIglOs", "title": "Green Coral And Reef Life", "duration": 25},
+        {"id": "WuRUw5AdxhM", "title": "Coral And Sand Bottom In Hawaii", "duration": 35},
+        {"id": "MEOhx9csbD0", "title": "Dead Reef Floor", "duration": 48},
+        {"id": "CXHfJuLiTts", "title": "Fish With Bubbles Near Reef", "duration": 19},
+        {"id": "fvwK-MLY1YI", "title": "Scuba Diver And Bubbles", "duration": 23},
+        {"id": "ytUvSr_uTk8", "title": "Scuba Diver And Snorkeler Duo", "duration": 23}
+      ]
     },
     {
       "id": "bali-2022",
@@ -54,7 +74,34 @@
       "region": "Kri/Mansuar, Raja Ampat, Indonesia",
       "year": 2023,
       "dates": "April 1-4, 2023",
-      "diveCount": 7
+      "diveCount": 7,
+      "videos": [
+        {"id": "iSNpKJyvfeM", "title": "Manta Ray In Raja Ampat", "duration": 51},
+        {"id": "6wz8zOa9kC0", "title": "Diver Encounters Manta Ray", "duration": 19},
+        {"id": "ntR-ojv8BzA", "title": "Manta Rays at Cleaning Station", "duration": 55},
+        {"id": "Cj3dQ1pWrns", "title": "Manta Ray Gliding Over Sandy Reef", "duration": 29},
+        {"id": "-qdfA-Xxssg", "title": "Manta Ray Swimming", "duration": 22},
+        {"id": "HEJWDZBhJiU", "title": "Multiple Whitetip Reef Sharks Resting", "duration": 68},
+        {"id": "P_IuhdCSVZA", "title": "Whitetip Reef Shark Resting in Cave", "duration": 20},
+        {"id": "bMpW66mxxtc", "title": "Wobbegong & Whitetip Reef Sharks in Cave", "duration": 15},
+        {"id": "kp0yYJxz3Tc", "title": "Wobbegong Shark On Coral Reef", "duration": 29},
+        {"id": "PEDkOkjc5E8", "title": "Wobbegong Shark On Seabed", "duration": 17},
+        {"id": "9dz5e7jaWPI", "title": "Ornate Wobbegong Shark Resting", "duration": 40},
+        {"id": "e1cHdPQryZw", "title": "Tasseled Wobbegong Shark Camouflaged", "duration": 24},
+        {"id": "t2Aa0U3Ojgc", "title": "Green Sea Turtle Under Coral", "duration": 54},
+        {"id": "IM3OCL77VtM", "title": "Stingray on Sandy Reef", "duration": 135},
+        {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66},
+        {"id": "EkinYhlA_B4", "title": "Massive School of Fusiliers", "duration": 48},
+        {"id": "YtpB61Kn6No", "title": "Massive School of Bumphead Parrotfish", "duration": 21},
+        {"id": "hmmrxqr3Yms", "title": "Bumphead Parrotfish Swimming Over Coral", "duration": 15},
+        {"id": "L990Vehgkk0", "title": "Yellowfin Fusiliers Schooling Along Reef", "duration": 30},
+        {"id": "5qGUKJ8KkuU", "title": "School Of Fish Over Reef", "duration": 77},
+        {"id": "KtjP0bPqkrI", "title": "School Of Fish Underwater", "duration": 17},
+        {"id": "Ns_I76pVAQU", "title": "Garden Eels In Sandy Seabed", "duration": 10},
+        {"id": "T_eM433oDLI", "title": "Giant Clam and Coral Reef", "duration": 29},
+        {"id": "7lB5VzsSQac", "title": "Colorful Giant Clam", "duration": 22},
+        {"id": "AXr3gHlD-5o", "title": "Moray Eel in Coral Crevice", "duration": 33}
+      ]
     },
     {
       "id": "raja-ampat-liveaboard-2023",
@@ -62,7 +109,34 @@
       "region": "Raja Ampat, West Papua, Indonesia",
       "year": 2023,
       "dates": "April 7-12, 2023",
-      "diveCount": 16
+      "diveCount": 16,
+      "videos": [
+        {"id": "iSNpKJyvfeM", "title": "Manta Ray In Raja Ampat", "duration": 51},
+        {"id": "6wz8zOa9kC0", "title": "Diver Encounters Manta Ray", "duration": 19},
+        {"id": "ntR-ojv8BzA", "title": "Manta Rays at Cleaning Station", "duration": 55},
+        {"id": "Cj3dQ1pWrns", "title": "Manta Ray Gliding Over Sandy Reef", "duration": 29},
+        {"id": "-qdfA-Xxssg", "title": "Manta Ray Swimming", "duration": 22},
+        {"id": "HEJWDZBhJiU", "title": "Multiple Whitetip Reef Sharks Resting", "duration": 68},
+        {"id": "P_IuhdCSVZA", "title": "Whitetip Reef Shark Resting in Cave", "duration": 20},
+        {"id": "bMpW66mxxtc", "title": "Wobbegong & Whitetip Reef Sharks in Cave", "duration": 15},
+        {"id": "kp0yYJxz3Tc", "title": "Wobbegong Shark On Coral Reef", "duration": 29},
+        {"id": "PEDkOkjc5E8", "title": "Wobbegong Shark On Seabed", "duration": 17},
+        {"id": "9dz5e7jaWPI", "title": "Ornate Wobbegong Shark Resting", "duration": 40},
+        {"id": "e1cHdPQryZw", "title": "Tasseled Wobbegong Shark Camouflaged", "duration": 24},
+        {"id": "t2Aa0U3Ojgc", "title": "Green Sea Turtle Under Coral", "duration": 54},
+        {"id": "IM3OCL77VtM", "title": "Stingray on Sandy Reef", "duration": 135},
+        {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66},
+        {"id": "EkinYhlA_B4", "title": "Massive School of Fusiliers", "duration": 48},
+        {"id": "YtpB61Kn6No", "title": "Massive School of Bumphead Parrotfish", "duration": 21},
+        {"id": "hmmrxqr3Yms", "title": "Bumphead Parrotfish Swimming Over Coral", "duration": 15},
+        {"id": "L990Vehgkk0", "title": "Yellowfin Fusiliers Schooling Along Reef", "duration": 30},
+        {"id": "5qGUKJ8KkuU", "title": "School Of Fish Over Reef", "duration": 77},
+        {"id": "KtjP0bPqkrI", "title": "School Of Fish Underwater", "duration": 17},
+        {"id": "Ns_I76pVAQU", "title": "Garden Eels In Sandy Seabed", "duration": 10},
+        {"id": "T_eM433oDLI", "title": "Giant Clam and Coral Reef", "duration": 29},
+        {"id": "7lB5VzsSQac", "title": "Colorful Giant Clam", "duration": 22},
+        {"id": "AXr3gHlD-5o", "title": "Moray Eel in Coral Crevice", "duration": 33}
+      ]
     },
     {
       "id": "sipadan-2023",
@@ -94,15 +168,7 @@
       "region": "Seven Mile Beach / West Wall, Grand Cayman",
       "year": 2026,
       "dates": null,
-      "diveCount": 10,
-      "videos": [
-        {"id": "tnkiR3C3Ho8", "title": "Clip 1", "duration": 46},
-        {"id": "bdAIGGOny18", "title": "Clip 2", "duration": 66},
-        {"id": "PmekfzSIGGU", "title": "Clip 3", "duration": 79},
-        {"id": "A1nk_4Fddd4", "title": "Clip 4", "duration": 48},
-        {"id": "HYGpR4NzTRE", "title": "Clip 5", "duration": 28},
-        {"id": "b8INHJXFypI", "title": "Clip 6", "duration": 31}
-      ]
+      "diveCount": 10
     }
   ],
   "dives": [
