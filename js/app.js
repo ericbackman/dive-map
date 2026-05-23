@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       .loadTrips(appData.trips)
       .loadDives(appData.dives);
 
+    TravelPath.init(DiveMap.map);
+    TravelPath.load();
+
     // Stats
     document.getElementById('dive-count').textContent = appData.dives.length;
     document.getElementById('trip-count').textContent = appData.trips ? appData.trips.length : 0;
