@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     logEl.classList.toggle('active', tabId === 'log');
 
     // Body scroll: map tab locks scroll, others allow it
-    document.body.style.overflow = tabId === 'map' ? 'hidden' : '';
+    document.body.style.overflow = tabId === 'map' ? 'hidden' : 'auto';
 
     // Leaflet needs invalidateSize after being hidden/shown
     if (tabId === 'map' && DiveMap.map) {
