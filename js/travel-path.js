@@ -1,10 +1,11 @@
 /**
  * TravelPath — multi-trip overlay system.
  *
- * Supports two rendering modes per trip:
+ * Supports three rendering modes per trip:
  *   "linear"    — ordered ant-path polyline with numbered stop markers
  *   "hub-spoke" — emoji hub with dashed spokes radiating to destinations;
  *                 spoke entries with a "chain" array render as a mini ant-path
+ *   "pins"      — standalone city dots with no connecting path
  */
 const TravelPath = {
   map: null,
@@ -21,7 +22,6 @@ const TravelPath = {
     const res = await fetch(`data/travel-path.json?v=${Date.now()}`);
     const data = await res.json();
 
-    // Support both old single-trip format and new multi-trip format
     const tripsData = data.trips || [{
       ...data, key: 'default', icon: '✈',
       color: '#ffd54f', pathColor: 'rgba(255,213,79,0.35)', mode: 'linear',
@@ -51,6 +51,8 @@ const TravelPath = {
   buildTrip(trip) {
     if (trip.mode === 'hub-spoke') {
       this.buildHubSpoke(trip);
+    } else if (trip.mode === 'pins') {
+      this.buildPins(trip);
     } else {
       this.buildLinear(trip);
     }
@@ -73,7 +75,6 @@ const TravelPath = {
       hardwareAccelerated: true,
     }));
 
-    // Track how many times we've visited each position so repeated stops offset
     const positionCounts = {};
     stops.forEach(stop => {
       const posKey = stop.lat.toFixed(3) + ',' + stop.lng.toFixed(3);
@@ -101,8 +102,8 @@ const TravelPath = {
       });
 
       const label = visitIndex > 0
-        ? `${stop.num}. ${stop.name} (return)`
-        : `${stop.num}. ${stop.name}`;
+        ? stop.num + '. ' + stop.name + ' (return)'
+        : stop.num + '. ' + stop.name;
       marker.bindTooltip(label, {
         direction: 'top',
         offset: [0, -size / 2 - 4],
@@ -115,14 +116,14 @@ const TravelPath = {
   // ─── Hub-and-spoke mode ───────────────────────────────────────────────────
 
   buildHubSpoke(trip) {
-    const { hub, spokes } = trip.data;
-    const hubLL = [hub.lat, hub.lng];
+    var hub = trip.data.hub;
+    var spokes = trip.data.spokes;
+    var hubLL = [hub.lat, hub.lng];
 
-    // Central hub — emoji marker
-    const hubMarker = L.marker(hubLL, {
+    var hubMarker = L.marker(hubLL, {
       icon: L.divIcon({
         className: 'travel-hub-emoji',
-        html: `<div class="travel-hub-icon">${hub.emoji || '📍'}</div>`,
+        html: this.buildHubIcon(hub.emoji || '📍'),
         iconSize: [36, 36],
         iconAnchor: [18, 18],
       }),
@@ -137,10 +138,8 @@ const TravelPath = {
 
     spokes.forEach(spoke => {
       if (spoke.chain) {
-        // Sequential sub-trip attached to one spoke ─────────────────────────
-        const chainCoords = spoke.chain.map(p => [p.lat, p.lng]);
+        var chainCoords = spoke.chain.map(p => [p.lat, p.lng]);
 
-        // Dashed spoke: hub → first city in chain
         trip.layerGroup.addLayer(L.polyline([hubLL, chainCoords[0]], {
           color: trip.pathColor,
           weight: 1.5,
@@ -148,7 +147,6 @@ const TravelPath = {
           opacity: 0.8,
         }));
 
-        // Animated ant-path for the ordered chain
         trip.layerGroup.addLayer(L.polyline.antPath(chainCoords, {
           delay: 700,
           dashArray: [8, 18],
@@ -158,10 +156,9 @@ const TravelPath = {
           hardwareAccelerated: true,
         }));
 
-        // Numbered markers for each city in the chain
         spoke.chain.forEach((pt, i) => {
-          const size = 20;
-          const marker = L.marker([pt.lat, pt.lng], {
+          var size = 20;
+          var marker = L.marker([pt.lat, pt.lng], {
             icon: L.divIcon({
               className: 'travel-stop',
               html: this.buildStopIcon(i + 1, 'stop', size, trip.color),
@@ -178,8 +175,7 @@ const TravelPath = {
           trip.layerGroup.addLayer(marker);
         });
       } else {
-        // Simple spoke: dashed line from hub ─────────────────────────────────
-        const destLL = [spoke.lat, spoke.lng];
+        var destLL = [spoke.lat, spoke.lng];
         trip.layerGroup.addLayer(L.polyline([hubLL, destLL], {
           color: trip.pathColor,
           weight: 1.5,
@@ -187,9 +183,8 @@ const TravelPath = {
           opacity: 0.8,
         }));
 
-        // Dot marker at destination
-        const size = 22;
-        const marker = L.marker(destLL, {
+        var size = 22;
+        var marker = L.marker(destLL, {
           icon: L.divIcon({
             className: 'travel-stop',
             html: this.buildSpokeIcon(size, trip.color),
@@ -198,7 +193,7 @@ const TravelPath = {
           }),
           zIndexOffset: -400,
         });
-        const label = spoke.note ? `${spoke.name} — ${spoke.note}` : spoke.name;
+        var label = spoke.note ? spoke.name + ' — ' + spoke.note : spoke.name;
         marker.bindTooltip(label, {
           direction: 'top',
           offset: [0, -size / 2 - 4],
@@ -209,17 +204,41 @@ const TravelPath = {
     });
   },
 
+  // ─── Pins mode (standalone city markers, no path) ─────────────────────────
+
+  buildPins(trip) {
+    var cities = trip.data.cities;
+    cities.forEach(city => {
+      var size = 16;
+      var marker = L.marker([city.lat, city.lng], {
+        icon: L.divIcon({
+          className: 'travel-stop',
+          html: this.buildPinIcon(size, trip.color),
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+        }),
+        zIndexOffset: -700,
+      });
+      var label = city.note ? city.name + ' — ' + city.note : city.name;
+      marker.bindTooltip(label, {
+        direction: 'top',
+        offset: [0, -size / 2 - 4],
+        className: 'travel-tooltip',
+      });
+      trip.layerGroup.addLayer(marker);
+    });
+  },
+
   // ─── Icon builders ────────────────────────────────────────────────────────
 
   buildStopIcon(num, type, size, accentColor) {
-    const safeType = this.VALID_TYPES.has(type) ? type : 'stop';
-    const div = document.createElement('div');
-    div.className = `travel-stop-num t-${safeType}`;
+    var safeType = this.VALID_TYPES.has(type) ? type : 'stop';
+    var div = document.createElement('div');
+    div.className = 'travel-stop-num t-' + safeType;
     div.style.width  = size + 'px';
     div.style.height = size + 'px';
     div.style.lineHeight = size + 'px';
     div.style.fontSize = (size < 26 ? 9 : 11) + 'px';
-    // Apply trip accent colour for generic stop/hub types
     if (accentColor && (safeType === 'stop' || safeType === 'hub')) {
       div.style.background = accentColor;
       div.style.color = '#0a1628';
@@ -228,8 +247,15 @@ const TravelPath = {
     return div.outerHTML;
   },
 
+  buildHubIcon(emoji) {
+    var div = document.createElement('div');
+    div.className = 'travel-hub-icon';
+    div.textContent = emoji;
+    return div.outerHTML;
+  },
+
   buildSpokeIcon(size, color) {
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.className = 'travel-stop-num';
     div.style.width      = size + 'px';
     div.style.height     = size + 'px';
@@ -240,30 +266,67 @@ const TravelPath = {
     return div.outerHTML;
   },
 
-  // ─── Control panel (topleft, below zoom buttons) ──────────────────────────
+  buildPinIcon(size, color) {
+    var div = document.createElement('div');
+    div.style.width        = size + 'px';
+    div.style.height       = size + 'px';
+    div.style.background   = color;
+    div.style.borderRadius = '50%';
+    div.style.border       = '2px solid rgba(255, 255, 255, 0.6)';
+    div.style.boxShadow    = '0 1px 4px rgba(0, 0, 0, 0.4)';
+    return div.outerHTML;
+  },
+
+  // ─── Control panel (topleft, collapsible dropdown) ────────────────────────
 
   addToggleControl() {
-    const self = this;
-    const Control = L.Control.extend({
+    var self = this;
+    var Control = L.Control.extend({
       options: { position: 'topleft' },
-      onAdd() {
-        const container = L.DomUtil.create('div', 'leaflet-bar travel-trips-panel');
+      onAdd: function () {
+        var container = L.DomUtil.create('div', 'leaflet-bar travel-trips-panel');
         L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableScrollPropagation(container);
 
-        self.trips.forEach(trip => {
-          const btn = L.DomUtil.create('a', 'travel-toggle-btn', container);
+        // ── Collapsible header ────────────────────────────
+        var header = L.DomUtil.create('div', 'travel-trips-header', container);
+        var headerLabel = document.createElement('span');
+        headerLabel.className = 'travel-trips-header-label';
+        headerLabel.textContent = '🗺️ Trips';
+        var chevron = document.createElement('span');
+        chevron.className = 'travel-trips-chevron';
+        chevron.textContent = '▾';
+        header.appendChild(headerLabel);
+        header.appendChild(chevron);
+
+        // ── Trip button list (collapsed by default) ───────
+        var list = L.DomUtil.create('div', 'travel-trips-list', container);
+        var expanded = false;
+
+        L.DomEvent.on(header, 'click', function (e) {
+          L.DomEvent.stopPropagation(e);
+          L.DomEvent.preventDefault(e);
+          expanded = !expanded;
+          list.style.display = expanded ? 'block' : 'none';
+          chevron.textContent = expanded ? '▴' : '▾';
+          container.classList.toggle('panel-expanded', expanded);
+        });
+
+        // ── One button per trip ───────────────────────────
+        self.trips.forEach(function (trip) {
+          var btn = L.DomUtil.create('a', 'travel-toggle-btn', list);
           btn.href  = '#';
-          btn.title = `${trip.name} (${trip.year})`;
+          btn.title = trip.name + ' (' + trip.year + ')';
           btn.style.setProperty('--trip-color', trip.color);
 
-          const icon = document.createElement('span');
+          var icon = document.createElement('span');
           icon.className   = 'travel-toggle-icon';
           icon.textContent = trip.icon;
           btn.appendChild(icon);
-          btn.appendChild(document.createTextNode(' ' + trip.name));
+          btn.appendChild(document.createTextNode(' ' + trip.name));
 
           trip.controlBtn = btn;
-          L.DomEvent.on(btn, 'click', (e) => {
+          L.DomEvent.on(btn, 'click', function (e) {
             L.DomEvent.preventDefault(e);
             self.toggle(trip);
           });
