@@ -4,8 +4,24 @@
     "totalDives": 156
   },
   "bestVideos": [
-    {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66, "trip": "Raja Ampat"},
-    {"id": "00IHG_NzAl8", "title": "Manta Rays Night Dive", "duration": 50, "trip": "Hawaii"}
+    {
+      "id": "6lcsqNVyRfA",
+      "title": "Manta Night Dive",
+      "duration": 18,
+      "trip": "Hawaii"
+    },
+    {
+      "id": "Qt7dzxnRvTY",
+      "title": "Massive School of Fusiliers",
+      "duration": 18,
+      "trip": "Raja Ampat"
+    },
+    {
+      "id": "xF-50A7-chk",
+      "title": "A Pod of Dolphins",
+      "duration": 18,
+      "trip": "Red Sea"
+    }
   ],
   "trips": [
     {
@@ -87,26 +103,7 @@
       "year": 2022,
       "dates": "December 4-7, 2022",
       "diveCount": 5,
-      "videos": [
-        {"id": "JcJwEpQhxJg", "title": "Manta Ray Night Dive", "duration": 44},
-        {"id": "00IHG_NzAl8", "title": "Manta Rays Night Dive", "duration": 50},
-        {"id": "c46Aj6g_BY0", "title": "Octopus On Coral Reef", "duration": 40},
-        {"id": "UweymKHoRNU", "title": "Octopus Hiding", "duration": 15},
-        {"id": "U7-1yWaDaEI", "title": "Underwater Lava Tube", "duration": 28},
-        {"id": "8Yy4TO5zU1A", "title": "Cave Diving In Hawaii", "duration": 21},
-        {"id": "OG6gCwLvAaw", "title": "Moray Eel On Coral Reef", "duration": 46},
-        {"id": "NANKd6LSJJE", "title": "Hawaii Coral Reef With Yellow Tangs", "duration": 20},
-        {"id": "21CjV_M_AJw", "title": "Trumpetfish Over Coral Reef", "duration": 11},
-        {"id": "ze_5yTfOGA8", "title": "Touching Reef Organism", "duration": 47},
-        {"id": "yYIjEstRnS8", "title": "Hawaiian Reef Landscape", "duration": 39},
-        {"id": "j2BLUeDG0Xc", "title": "Rocky Reef With Corals", "duration": 40},
-        {"id": "ixxCXNIglOs", "title": "Green Coral And Reef Life", "duration": 25},
-        {"id": "WuRUw5AdxhM", "title": "Coral And Sand Bottom In Hawaii", "duration": 35},
-        {"id": "MEOhx9csbD0", "title": "Dead Reef Floor", "duration": 48},
-        {"id": "CXHfJuLiTts", "title": "Fish With Bubbles Near Reef", "duration": 19},
-        {"id": "fvwK-MLY1YI", "title": "Scuba Diver And Bubbles", "duration": 23},
-        {"id": "ytUvSr_uTk8", "title": "Scuba Diver And Snorkeler Duo", "duration": 23}
-      ]
+      "videos": []
     },
     {
       "id": "bali-2022",
@@ -147,33 +144,7 @@
       "year": 2023,
       "dates": "April 1-4, 2023",
       "diveCount": 7,
-      "videos": [
-        {"id": "iSNpKJyvfeM", "title": "Manta Ray In Raja Ampat", "duration": 51},
-        {"id": "6wz8zOa9kC0", "title": "Diver Encounters Manta Ray", "duration": 19},
-        {"id": "ntR-ojv8BzA", "title": "Manta Rays at Cleaning Station", "duration": 55},
-        {"id": "Cj3dQ1pWrns", "title": "Manta Ray Gliding Over Sandy Reef", "duration": 29},
-        {"id": "-qdfA-Xxssg", "title": "Manta Ray Swimming", "duration": 22},
-        {"id": "HEJWDZBhJiU", "title": "Multiple Whitetip Reef Sharks Resting", "duration": 68},
-        {"id": "P_IuhdCSVZA", "title": "Whitetip Reef Shark Resting in Cave", "duration": 20},
-        {"id": "bMpW66mxxtc", "title": "Wobbegong & Whitetip Reef Sharks in Cave", "duration": 15},
-        {"id": "kp0yYJxz3Tc", "title": "Wobbegong Shark On Coral Reef", "duration": 29},
-        {"id": "PEDkOkjc5E8", "title": "Wobbegong Shark On Seabed", "duration": 17},
-        {"id": "9dz5e7jaWPI", "title": "Ornate Wobbegong Shark Resting", "duration": 40},
-        {"id": "e1cHdPQryZw", "title": "Tasseled Wobbegong Shark Camouflaged", "duration": 24},
-        {"id": "t2Aa0U3Ojgc", "title": "Green Sea Turtle Under Coral", "duration": 54},
-        {"id": "IM3OCL77VtM", "title": "Stingray on Sandy Reef", "duration": 135},
-        {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66},
-        {"id": "EkinYhlA_B4", "title": "Massive School of Fusiliers", "duration": 48},
-        {"id": "YtpB61Kn6No", "title": "Massive School of Bumphead Parrotfish", "duration": 21},
-        {"id": "hmmrxqr3Yms", "title": "Bumphead Parrotfish Swimming Over Coral", "duration": 15},
-        {"id": "L990Vehgkk0", "title": "Yellowfin Fusiliers Schooling Along Reef", "duration": 30},
-        {"id": "5qGUKJ8KkuU", "title": "School Of Fish Over Reef", "duration": 77},
-        {"id": "KtjP0bPqkrI", "title": "School Of Fish Underwater", "duration": 17},
-        {"id": "Ns_I76pVAQU", "title": "Garden Eels In Sandy Seabed", "duration": 10},
-        {"id": "T_eM433oDLI", "title": "Giant Clam and Coral Reef", "duration": 29},
-        {"id": "7lB5VzsSQac", "title": "Colorful Giant Clam", "duration": 22},
-        {"id": "AXr3gHlD-5o", "title": "Moray Eel in Coral Crevice", "duration": 33}
-      ]
+      "videos": []
     },
     {
       "id": "raja-ampat-liveaboard-2023",
@@ -182,33 +153,7 @@
       "year": 2023,
       "dates": "April 7-12, 2023",
       "diveCount": 16,
-      "videos": [
-        {"id": "iSNpKJyvfeM", "title": "Manta Ray In Raja Ampat", "duration": 51},
-        {"id": "6wz8zOa9kC0", "title": "Diver Encounters Manta Ray", "duration": 19},
-        {"id": "ntR-ojv8BzA", "title": "Manta Rays at Cleaning Station", "duration": 55},
-        {"id": "Cj3dQ1pWrns", "title": "Manta Ray Gliding Over Sandy Reef", "duration": 29},
-        {"id": "-qdfA-Xxssg", "title": "Manta Ray Swimming", "duration": 22},
-        {"id": "HEJWDZBhJiU", "title": "Multiple Whitetip Reef Sharks Resting", "duration": 68},
-        {"id": "P_IuhdCSVZA", "title": "Whitetip Reef Shark Resting in Cave", "duration": 20},
-        {"id": "bMpW66mxxtc", "title": "Wobbegong & Whitetip Reef Sharks in Cave", "duration": 15},
-        {"id": "kp0yYJxz3Tc", "title": "Wobbegong Shark On Coral Reef", "duration": 29},
-        {"id": "PEDkOkjc5E8", "title": "Wobbegong Shark On Seabed", "duration": 17},
-        {"id": "9dz5e7jaWPI", "title": "Ornate Wobbegong Shark Resting", "duration": 40},
-        {"id": "e1cHdPQryZw", "title": "Tasseled Wobbegong Shark Camouflaged", "duration": 24},
-        {"id": "t2Aa0U3Ojgc", "title": "Green Sea Turtle Under Coral", "duration": 54},
-        {"id": "IM3OCL77VtM", "title": "Stingray on Sandy Reef", "duration": 135},
-        {"id": "Lcc9-ydVYYk", "title": "Massive School of Fish on Reef Wall", "duration": 66},
-        {"id": "EkinYhlA_B4", "title": "Massive School of Fusiliers", "duration": 48},
-        {"id": "YtpB61Kn6No", "title": "Massive School of Bumphead Parrotfish", "duration": 21},
-        {"id": "hmmrxqr3Yms", "title": "Bumphead Parrotfish Swimming Over Coral", "duration": 15},
-        {"id": "L990Vehgkk0", "title": "Yellowfin Fusiliers Schooling Along Reef", "duration": 30},
-        {"id": "5qGUKJ8KkuU", "title": "School Of Fish Over Reef", "duration": 77},
-        {"id": "KtjP0bPqkrI", "title": "School Of Fish Underwater", "duration": 17},
-        {"id": "Ns_I76pVAQU", "title": "Garden Eels In Sandy Seabed", "duration": 10},
-        {"id": "T_eM433oDLI", "title": "Giant Clam and Coral Reef", "duration": 29},
-        {"id": "7lB5VzsSQac", "title": "Colorful Giant Clam", "duration": 22},
-        {"id": "AXr3gHlD-5o", "title": "Moray Eel in Coral Crevice", "duration": 33}
-      ]
+      "videos": []
     },
     {
       "id": "sipadan-2023",
@@ -255,7 +200,13 @@
       "duration_min": 25,
       "date": "2013-12-30",
       "type": "reef",
-      "highlights": ["Christ of the Abyss statue", "barracuda", "trumpetfish", "drumfish", "lobster"],
+      "highlights": [
+        "Christ of the Abyss statue",
+        "barracuda",
+        "trumpetfish",
+        "drumfish",
+        "lobster"
+      ],
       "notes": "Cool statue. Needed extra weight (16→20 lbs). Barracuda, trumpet/drum fish, lobster shell. 30–40 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -265,13 +216,15 @@
       "trip": "key-largo-2013",
       "site": "North Dry Rocks",
       "location": "Key Largo, Florida Keys, USA",
-      "lat": 25.1240,
-      "lng": -80.3000,
+      "lat": 25.124,
+      "lng": -80.3,
       "depth_m": 6.1,
       "duration_min": 36,
       "date": "2013-12-30",
       "type": "reef",
-      "highlights": ["turtle"],
+      "highlights": [
+        "turtle"
+      ],
       "notes": "Saw turtle. Went smoother than dive 1. 30–40 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -281,13 +234,16 @@
       "trip": "key-largo-2013",
       "site": "North North Dry Rocks",
       "location": "Key Largo, Florida Keys, USA",
-      "lat": 25.1260,
+      "lat": 25.126,
       "lng": -80.3005,
       "depth_m": 8.8,
       "duration_min": 37,
       "date": "2013-12-31",
       "type": "reef",
-      "highlights": ["sea cucumber", "neutral buoyancy achieved"],
+      "highlights": [
+        "sea cucumber",
+        "neutral buoyancy achieved"
+      ],
       "notes": "Sea cucumbers, achieved neutral buoyancy for the first time, went smoothly. 30 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -303,7 +259,10 @@
       "duration_min": 40,
       "date": "2013-12-31",
       "type": "reef",
-      "highlights": ["horse conch", "barracuda"],
+      "highlights": [
+        "horse conch",
+        "barracuda"
+      ],
       "notes": "Saw horse conch, plenty of barracudas, went smoothly. 30 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -319,7 +278,13 @@
       "duration_min": 47,
       "date": "2014-01-03",
       "type": "reef",
-      "highlights": ["Jules' Undersea Lodge", "underwater hotel", "cannons", "crabs", "lobster"],
+      "highlights": [
+        "Jules' Undersea Lodge",
+        "underwater hotel",
+        "cannons",
+        "crabs",
+        "lobster"
+      ],
       "notes": "Saw underwater lab and hotel (Jules' Undersea Lodge), went inside hotel, saw cannons, crabs and huge lobster. Murky 10–15 ft vis. Shore dive.",
       "rating": null,
       "media": []
@@ -335,7 +300,10 @@
       "duration_min": 42,
       "date": "2014-04-17",
       "type": "wall",
-      "highlights": ["moray eels", "wall dive"],
+      "highlights": [
+        "moray eels",
+        "wall dive"
+      ],
       "notes": "Eels, deepest dive to date. Huge wall, variety of aquatic life. 70–75 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -351,7 +319,12 @@
       "duration_min": 54,
       "date": "2014-04-17",
       "type": "reef",
-      "highlights": ["lionfish", "trumpetfish", "scorpionfish", "lobster"],
+      "highlights": [
+        "lionfish",
+        "trumpetfish",
+        "scorpionfish",
+        "lobster"
+      ],
       "notes": "Lots of lionfish, trumpet fish, scorpion fish, huge lobster. 75 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -367,7 +340,11 @@
       "duration_min": 49,
       "date": "2014-04-18",
       "type": "wall",
-      "highlights": ["stingray", "moray eels", "wall drop"],
+      "highlights": [
+        "stingray",
+        "moray eels",
+        "wall drop"
+      ],
       "notes": "Stingray, two eels, stung by hydroid. Huge wall drop. Best site to date. 100 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -383,7 +360,13 @@
       "duration_min": 53,
       "date": "2014-04-18",
       "type": "cave",
-      "highlights": ["barracuda", "sea turtle", "rare squid", "natural arch", "caves"],
+      "highlights": [
+        "barracuda",
+        "sea turtle",
+        "rare squid",
+        "natural arch",
+        "caves"
+      ],
       "notes": "Barracuda, GoPro footage, followed sea turtle, saw rare squid, swam through arch, big caves. 100 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -394,12 +377,17 @@
       "site": "Eagle Ray Pass",
       "location": "Grand Cayman, Cayman Islands",
       "lat": 19.277,
-      "lng": -81.410,
+      "lng": -81.41,
       "depth_m": 27.4,
       "duration_min": 52,
       "date": "2014-04-19",
       "type": "wall",
-      "highlights": ["eagle rays x3", "nurse shark", "sea turtle", "parrotfish spawning"],
+      "highlights": [
+        "eagle rays x3",
+        "nurse shark",
+        "sea turtle",
+        "parrotfish spawning"
+      ],
       "notes": "3 eagle rays, nurse shark, sea turtle, wall dive, GoPro footage, parrot fish spawning. 90 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -415,7 +403,11 @@
       "duration_min": 57,
       "date": "2014-04-19",
       "type": "reef",
-      "highlights": ["spotted eel", "nurse shark", "lionfish"],
+      "highlights": [
+        "spotted eel",
+        "nurse shark",
+        "lionfish"
+      ],
       "notes": "Spotted eel, nurse shark, guide killed lionfish. Nice shallow dive. 100 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -425,13 +417,16 @@
       "trip": "singer-island-2015",
       "site": "Blue Heron Bridge",
       "location": "Singer Island, Riviera Beach, Florida, USA",
-      "lat": 26.7780,
+      "lat": 26.778,
       "lng": -80.0568,
       "depth_m": null,
       "duration_min": 30,
       "date": "2015-12-28",
       "type": "reef",
-      "highlights": ["lobster", "sand ray"],
+      "highlights": [
+        "lobster",
+        "sand ray"
+      ],
       "notes": "Saw lobster and sand ray. Shore dive under the Blue Heron Bridge.",
       "rating": null,
       "media": []
@@ -447,7 +442,10 @@
       "duration_min": 50,
       "date": "2017-12-26",
       "type": "reef",
-      "highlights": ["angelfish", "purple sponge coral"],
+      "highlights": [
+        "angelfish",
+        "purple sponge coral"
+      ],
       "notes": "Re-oriented after 2-year break. Swam along reef, walked in from VRBO. Angelfish, purple sponge coral. 60 ft vis. Shore dive.",
       "rating": null,
       "media": []
@@ -458,12 +456,16 @@
       "site": "Captain Don's Reef",
       "location": "Bonaire, Caribbean Netherlands",
       "lat": 12.154,
-      "lng": -68.290,
+      "lng": -68.29,
       "depth_m": 23.5,
       "duration_min": 60,
       "date": "2017-12-28",
       "type": "reef",
-      "highlights": ["sea slugs", "shrimp", "diverse fish"],
+      "highlights": [
+        "sea slugs",
+        "shrimp",
+        "diverse fish"
+      ],
       "notes": "Sea slugs, shrimp, myriad of diverse fish. Struggled with weight/goggles. Gradual reef. 50 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -479,7 +481,13 @@
       "duration_min": 60,
       "date": "2017-12-28",
       "type": "wall",
-      "highlights": ["parrotfish school", "lionfish", "moray eel", "pufferfish", "large crab"],
+      "highlights": [
+        "parrotfish school",
+        "lionfish",
+        "moray eel",
+        "pufferfish",
+        "large crab"
+      ],
       "notes": "Swam along steep wall inside schools of parrot fish. Lionfish, moray eels, puffer fish, large crab. 50 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -495,7 +503,12 @@
       "duration_min": 50,
       "date": "2017-12-31",
       "type": "reef",
-      "highlights": ["turtle", "schools of fish", "brittle starfish", "camouflaged fish"],
+      "highlights": [
+        "turtle",
+        "schools of fish",
+        "brittle starfish",
+        "camouflaged fish"
+      ],
       "notes": "Large schools of fish along reef. Busy dive site. Turtle eating off rock. Lots of camouflaged fish, brittle starfish. Looked like an alien. 50 ft vis. Shore dive.",
       "rating": null,
       "media": []
@@ -511,7 +524,11 @@
       "duration_min": 60,
       "date": "2018-01-01",
       "type": "reef",
-      "highlights": ["schools of fish", "scrawled filefish", "flounder"],
+      "highlights": [
+        "schools of fish",
+        "scrawled filefish",
+        "flounder"
+      ],
       "notes": "Small schools of fish, beautiful coral, scrawled filefish, flounder. 40 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -527,7 +544,11 @@
       "duration_min": 60,
       "date": "2018-01-01",
       "type": "reef",
-      "highlights": ["bearded fireworm", "blue parrotfish school", "angelfish"],
+      "highlights": [
+        "bearded fireworm",
+        "blue parrotfish school",
+        "angelfish"
+      ],
       "notes": "Bearded fireworm, large schools of blue parrot fish, angelfish. 60 ft vis. Boat dive.",
       "rating": null,
       "media": []
@@ -543,7 +564,13 @@
       "duration_min": 49,
       "date": "2019-08-26",
       "type": "reef",
-      "highlights": ["banded sea snake", "lionfish", "pufferfish", "triggerfish", "sea cucumber"],
+      "highlights": [
+        "banded sea snake",
+        "lionfish",
+        "pufferfish",
+        "triggerfish",
+        "sea cucumber"
+      ],
       "notes": "Banded sea snake, lionfish, pufferfish, triggerfish, sea cucumber. 15 m vis. Boat dive. Aussie Divers Phuket.",
       "rating": null,
       "media": []
@@ -559,7 +586,12 @@
       "duration_min": 51,
       "date": "2019-08-26",
       "type": "reef",
-      "highlights": ["barracuda school", "sea cucumber", "lionfish", "moray eel"],
+      "highlights": [
+        "barracuda school",
+        "sea cucumber",
+        "lionfish",
+        "moray eel"
+      ],
       "notes": "Large school of barracuda, sea cucumber, lion fish, moray eel. 15 m vis. Boat dive. Aussie Divers Phuket.",
       "rating": null,
       "media": []
@@ -575,7 +607,12 @@
       "duration_min": 50,
       "date": "2019-08-26",
       "type": "reef",
-      "highlights": ["manta rays", "moray eels", "cuttlefish", "yellow snapper school"],
+      "highlights": [
+        "manta rays",
+        "moray eels",
+        "cuttlefish",
+        "yellow snapper school"
+      ],
       "notes": "Moray eels, spotted manta rays, cuttlefish, sea cucumber, shrimp, yellow snapper school. 15 m vis. Boat dive. Aussie Divers Phuket.",
       "rating": null,
       "media": []
@@ -591,7 +628,12 @@
       "duration_min": 37,
       "date": "2019-08-27",
       "type": "drift",
-      "highlights": ["scorpionfish", "lionfish", "moray eels", "yellow snapper school"],
+      "highlights": [
+        "scorpionfish",
+        "lionfish",
+        "moray eels",
+        "yellow snapper school"
+      ],
       "notes": "Strong current, low vis (5–10 m). Scorpionfish, lion fish, moray eels, large schools of yellow snapper above. Boat dive. Aussie Divers Phuket.",
       "rating": null,
       "media": []
@@ -601,13 +643,19 @@
       "trip": "phuket-2019",
       "site": "Kled Kaeo (Wreck)",
       "location": "Phuket, Thailand",
-      "lat": 7.850,
-      "lng": 98.380,
+      "lat": 7.85,
+      "lng": 98.38,
       "depth_m": 20.0,
       "duration_min": 39,
       "date": "2019-08-27",
       "type": "wreck",
-      "highlights": ["clams", "sea urchins", "pufferfish", "lionfish", "yellow snapper school"],
+      "highlights": [
+        "clams",
+        "sea urchins",
+        "pufferfish",
+        "lionfish",
+        "yellow snapper school"
+      ],
       "notes": "3-year-old ship sunk on purpose. Low vis. Covered in clams/sea urchins. Pufferfish, lionfish, so many yellow snapper circling entire ship. Boat dive. Aussie Divers Phuket.",
       "rating": null,
       "media": []
@@ -623,7 +671,12 @@
       "duration_min": 43,
       "date": "2019-08-27",
       "type": "wall",
-      "highlights": ["sea turtle", "lionfish", "moray eel", "caves"],
+      "highlights": [
+        "sea turtle",
+        "lionfish",
+        "moray eel",
+        "caves"
+      ],
       "notes": "Wall dive, low visibility. 2 caves, went into mouth of one at ~18 m. Sea turtle, lion fish, moray eel. Boat dive.",
       "rating": null,
       "media": []
@@ -639,7 +692,14 @@
       "duration_min": 30,
       "date": "2019-12-22",
       "type": "drift",
-      "highlights": ["sea turtle", "pistol shrimp", "nurse shark", "eagle ray", "jellyfish", "brown ray"],
+      "highlights": [
+        "sea turtle",
+        "pistol shrimp",
+        "nurse shark",
+        "eagle ray",
+        "jellyfish",
+        "brown ray"
+      ],
       "notes": "AOW deep water dive. Underweighted. Cut under caves. Sea turtle, pistol shrimp, nurse shark, plenty of jellyfish, eagle ray, brown ray. 20 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -649,13 +709,18 @@
       "trip": "cozumel-2019",
       "site": "Santa Rosa Wall",
       "location": "Cozumel, Quintana Roo, Mexico",
-      "lat": 20.4050,
+      "lat": 20.405,
       "lng": -87.0324,
       "depth_m": 20.0,
       "duration_min": 45,
       "date": "2019-12-22",
       "type": "drift",
-      "highlights": ["pistol shrimp", "eagle ray", "sea cucumber", "sea turtle"],
+      "highlights": [
+        "pistol shrimp",
+        "eagle ray",
+        "sea cucumber",
+        "sea turtle"
+      ],
       "notes": "AOW drift dive. Pistol shrimp, eagle ray, sea cucumber, sea turtle. Properly weighted. 20 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -671,7 +736,12 @@
       "duration_min": 35,
       "date": "2019-12-25",
       "type": "drift",
-      "highlights": ["lobster", "crabs", "parrotfish", "turtle"],
+      "highlights": [
+        "lobster",
+        "crabs",
+        "parrotfish",
+        "turtle"
+      ],
       "notes": "Strong current. Large lobster and crabs, small schools of parrotfish, turtle. Went up early due to air consumption. 20 m vis. Boat drift dive. (Site name not logged.)",
       "rating": null,
       "media": []
@@ -687,7 +757,13 @@
       "duration_min": 35,
       "date": "2019-12-26",
       "type": "drift",
-      "highlights": ["brown rays", "lobsters", "turtle", "parrotfish", "swim-through"],
+      "highlights": [
+        "brown rays",
+        "lobsters",
+        "turtle",
+        "parrotfish",
+        "swim-through"
+      ],
       "notes": "Brown rays, large lobsters. Very strong current. Turtle. Variety of parrotfish. Long solid reef. Cool swim-through. 15 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -703,7 +779,13 @@
       "duration_min": 45,
       "date": "2019-12-26",
       "type": "drift",
-      "highlights": ["eagle rays x2", "nurse shark", "yellow stingray", "trumpetfish", "lobster"],
+      "highlights": [
+        "eagle rays x2",
+        "nurse shark",
+        "yellow stingray",
+        "trumpetfish",
+        "lobster"
+      ],
       "notes": "Two large eagle rays, large nurse shark in cave, yellow stingray, trumpetfish, large lobster. 15 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -713,13 +795,17 @@
       "trip": "cozumel-2019",
       "site": "Night Dive",
       "location": "Cozumel, Quintana Roo, Mexico",
-      "lat": 20.430,
-      "lng": -87.020,
+      "lat": 20.43,
+      "lng": -87.02,
       "depth_m": 15.0,
       "duration_min": 35,
       "date": "2019-12-26",
       "type": "night",
-      "highlights": ["king crabs", "lobsters", "bioluminescence"],
+      "highlights": [
+        "king crabs",
+        "lobsters",
+        "bioluminescence"
+      ],
       "notes": "First night dive for AOW. King crabs, lobsters on move, bioluminescent plankton when moved. Lots of reds, yellows and oranges. Boat drift dive.",
       "rating": null,
       "media": []
@@ -735,7 +821,10 @@
       "duration_min": 44,
       "date": "2019-12-27",
       "type": "drift",
-      "highlights": ["scorpionfish", "moray eel"],
+      "highlights": [
+        "scorpionfish",
+        "moray eel"
+      ],
       "notes": "AOW peak performance buoyancy dive. Knocked over weights on bottom. Scorpionfish, large eel. 20 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -751,7 +840,11 @@
       "duration_min": 53,
       "date": "2019-12-27",
       "type": "drift",
-      "highlights": ["moray eel", "lobsters", "pufferfish"],
+      "highlights": [
+        "moray eel",
+        "lobsters",
+        "pufferfish"
+      ],
       "notes": "AOW navigation dive. Did 100 ft speed swim check, swam 10-kick-cycle square. Large eel, lobsters, pufferfish. 20 m vis. Boat drift dive.",
       "rating": null,
       "media": []
@@ -767,7 +860,11 @@
       "duration_min": 43,
       "date": "2022-01-15",
       "type": "cenote",
-      "highlights": ["stalagmites", "stalactites", "freshwater cavern"],
+      "highlights": [
+        "stalagmites",
+        "stalactites",
+        "freshwater cavern"
+      ],
       "notes": "Dove in cenote. Very cool stalagmites/stalactites. Small fish. Mostly cavern setting. Free divers in same cenote. 10 m vis. Fresh water.",
       "rating": null,
       "media": []
@@ -777,13 +874,17 @@
       "trip": "cancun-2022",
       "site": "Cenote Maravilla",
       "location": "Riviera Maya, Quintana Roo, Mexico",
-      "lat": 20.860,
+      "lat": 20.86,
       "lng": -87.058,
       "depth_m": 32.0,
       "duration_min": 42,
       "date": "2022-01-15",
       "type": "cenote",
-      "highlights": ["sulfur layer", "cavern", "halocline"],
+      "highlights": [
+        "sulfur layer",
+        "cavern",
+        "halocline"
+      ],
       "notes": "Cavern dive. Sulfur layer at ~27 m (90 ft) looks like a cloud you swim through — smells like rotten eggs inside. Cavern ~70 m deep, got wider as descended. 10 m vis. Fresh water.",
       "rating": null,
       "media": []
@@ -799,7 +900,11 @@
       "duration_min": 52,
       "date": "2022-01-21",
       "type": "night",
-      "highlights": ["lobsters", "parrotfish", "Spanish lobster"],
+      "highlights": [
+        "lobsters",
+        "parrotfish",
+        "Spanish lobster"
+      ],
       "notes": "So many lobsters, parrotfish, Spanish lobster. Night dive. Boat, drift/surge. Salt water.",
       "rating": null,
       "media": []
@@ -815,7 +920,10 @@
       "duration_min": 48,
       "date": "2022-02-19",
       "type": "reef",
-      "highlights": ["vibrant reef", "coral"],
+      "highlights": [
+        "vibrant reef",
+        "coral"
+      ],
       "notes": "Vibrant reef, more coral than fish. First dive with GoPro. Pseudo wall dive, sloping walls. Lots of fish above reef. 15 m vis. Salt, boat, drift.",
       "rating": null,
       "media": []
@@ -831,7 +939,10 @@
       "duration_min": 52,
       "date": "2022-02-19",
       "type": "wall",
-      "highlights": ["large moray eel", "schools of fish"],
+      "highlights": [
+        "large moray eel",
+        "schools of fish"
+      ],
       "notes": "Wall/plateau dive. Smaller schools of fish near top of reef. Large moray eel. 15 m vis. Salt, boat, drift.",
       "rating": null,
       "media": []
@@ -842,12 +953,18 @@
       "site": "Gloria",
       "location": "Islas del Rosario, Cartagena, Colombia",
       "lat": 10.175,
-      "lng": -75.750,
+      "lng": -75.75,
       "depth_m": 19.0,
       "duration_min": 52,
       "date": "2022-02-20",
       "type": "wall",
-      "highlights": ["parrotfish", "fireworms", "turtle", "eels", "angelfish"],
+      "highlights": [
+        "parrotfish",
+        "fireworms",
+        "turtle",
+        "eels",
+        "angelfish"
+      ],
       "notes": "Wall/plateau dive. Lots of schools of fish, parrot fish, fire worms. Turtle + remoras went super fast. Eels, angelfish. 15 m vis. Salt, boat, drift.",
       "rating": null,
       "media": []
@@ -857,13 +974,18 @@
       "trip": "cartagena-2022",
       "site": "Colombia",
       "location": "Islas del Rosario, Cartagena, Colombia",
-      "lat": 10.170,
+      "lat": 10.17,
       "lng": -75.747,
       "depth_m": 18.0,
       "duration_min": 49,
       "date": "2022-02-20",
       "type": "wall",
-      "highlights": ["jellyfish", "pufferfish", "lionfish", "chain jellyfish"],
+      "highlights": [
+        "jellyfish",
+        "pufferfish",
+        "lionfish",
+        "chain jellyfish"
+      ],
       "notes": "Jellyfish, large pufferfish, large lionfish, chain jellyfish. Plateau wall dive. 15 m vis. Salt, boat.",
       "rating": null,
       "media": []
@@ -879,7 +1001,12 @@
       "duration_min": 40,
       "date": "2022-02-20",
       "type": "night",
-      "highlights": ["lobsters", "crab", "shrimp", "spotted moray eel"],
+      "highlights": [
+        "lobsters",
+        "crab",
+        "shrimp",
+        "spotted moray eel"
+      ],
       "notes": "Lobsters, crab, shrimp, spotted moray eel. AOW course — lowest vis night dive to date. Salt, boat.",
       "rating": null,
       "media": []
@@ -895,7 +1022,13 @@
       "duration_min": 54,
       "date": "2022-02-21",
       "type": "reef",
-      "highlights": ["squid", "moray eel", "pufferfish", "trumpetfish", "drumfish"],
+      "highlights": [
+        "squid",
+        "moray eel",
+        "pufferfish",
+        "trumpetfish",
+        "drumfish"
+      ],
       "notes": "Squid, large moray, pufferfish, trumpet fish, drummer fish. 15 m vis. Salt, boat.",
       "rating": null,
       "media": []
@@ -906,12 +1039,15 @@
       "site": "Martinsita",
       "location": "Islas del Rosario, Cartagena, Colombia",
       "lat": 10.165,
-      "lng": -75.740,
+      "lng": -75.74,
       "depth_m": 15.0,
       "duration_min": 45,
       "date": "2022-02-21",
       "type": "drift",
-      "highlights": ["pufferfish", "coral"],
+      "highlights": [
+        "pufferfish",
+        "coral"
+      ],
       "notes": "Big current dive. Pufferfish, good coral. 15 m vis. Salt, boat.",
       "rating": null,
       "media": []
