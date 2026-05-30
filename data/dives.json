@@ -5,21 +5,23 @@
   },
   "bestVideos": [
     {
-      "id": "6lcsqNVyRfA",
+      "id": "0QkoWeVmTYg",
       "title": "Manta Night Dive",
-      "duration": 18,
       "trip": "Hawaii"
     },
     {
-      "id": "Qt7dzxnRvTY",
-      "title": "Massive School of Fusiliers",
-      "duration": 18,
+      "id": "E4SnfIgXZc8",
+      "title": "Green Sea Turtle",
       "trip": "Raja Ampat"
     },
     {
-      "id": "xF-50A7-chk",
-      "title": "A Pod of Dolphins",
-      "duration": 18,
+      "id": "ckdECiQH5b4",
+      "title": "Massive Fish School",
+      "trip": "Raja Ampat"
+    },
+    {
+      "id": "ZnQ_bu8gb5A",
+      "title": "Pod of Dolphins",
       "trip": "Red Sea"
     }
   ],
