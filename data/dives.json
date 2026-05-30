@@ -103,7 +103,88 @@
       "year": 2022,
       "dates": "December 4-7, 2022",
       "diveCount": 5,
-      "videos": []
+      "videos": [
+        {
+          "id": "VsMVJa_uz3I",
+          "title": "Underwater Cave Exploration"
+        },
+        {
+          "id": "661JpiAvkHk",
+          "title": "Scuba Divers Exploring Rocky Underwater Wall"
+        },
+        {
+          "id": "nyr297Fn3i0",
+          "title": "Barren Coral Reef Seascape"
+        },
+        {
+          "id": "SaUrl1HP3-8",
+          "title": "Scuba Tank"
+        },
+        {
+          "id": "kfCLcMp1g-M",
+          "title": "Scuba Divers Ascending"
+        },
+        {
+          "id": "S4V7B8ZrAJ4",
+          "title": "Scuba Diver Blowing Bubbles"
+        },
+        {
+          "id": "_wuKmJDZaHA",
+          "title": "Trumpetfish With Reef Background"
+        },
+        {
+          "id": "jj1E4VgkrVc",
+          "title": "Fish And Bubbles From A Scuba Diver"
+        },
+        {
+          "id": "l8Sls8jc1l0",
+          "title": "Colorful Coral Reef With Yellow Tangs"
+        },
+        {
+          "id": "0TXuAivb7Qk",
+          "title": "School Of Fish Over Healthy Coral Reef"
+        },
+        {
+          "id": "_38TGKQu3aA",
+          "title": "Coral Reef With Small Fish"
+        },
+        {
+          "id": "iw3DXeMtQeM",
+          "title": "Spotted Moray Eel In A Cave"
+        },
+        {
+          "id": "tJyxxWV7bRM",
+          "title": "Moray Eel In Reef"
+        },
+        {
+          "id": "r6QHuzIFrjg",
+          "title": "Green Moray Eel On Reef"
+        },
+        {
+          "id": "O_HJb3l_fpI",
+          "title": "Diver Interacting With Octopus"
+        },
+        {
+          "id": "yEIv4XT4CxE",
+          "title": "Underwater Cave With Sun Rays"
+        },
+        {
+          "id": "yRHgnqRoZSo",
+          "title": "Green Sea Turtle Swimming Over Coral Reef"
+        },
+        {
+          "id": "0QkoWeVmTYg",
+          "title": "Night Manta Ray Dive"
+        },
+        {
+          "id": "-VjrlpWbnG4",
+          "title": "Night Manta Ray Dive 2"
+        },
+        {
+          "id": "7pYfLcQfMt0",
+          "title": "Black Manta Ray Over Reef"
+        }
+      ]
     },
     {
       "id": "bali-2022",
@@ -119,7 +200,53 @@
       "region": "Labuan Bajo / Komodo Islands, Indonesia",
       "year": 2022,
       "dates": "May 28-29, 2022",
-      "diveCount": 6
+      "diveCount": 6,
+      "videos": [
+        {
+          "id": "4HovPqOIuAg",
+          "title": "Scuba Divers Over Rocky Reef"
+        },
+        {
+          "id": "9ygIyhmhkv0",
+          "title": "School of Blue Tang on Coral Reef"
+        },
+        {
+          "id": "XhQjMIlFFME",
+          "title": "Blue Tangs On Reef"
+        },
+        {
+          "id": "Sn_62CqBrQg",
+          "title": "Blue Tang Schooling Over Coral"
+        },
+        {
+          "id": "hcFsBAy9JOY",
+          "title": "Fish On Sandy Reef Floor"
+        },
+        {
+          "id": "yc80ho5-UKQ",
+          "title": "Scuba Diver And Triggerfish"
+        },
+        {
+          "id": "4nDTflBh41M",
+          "title": "Green Moray Eel In Coral Reef"
+        },
+        {
+          "id": "tK1621jVVSE",
+          "title": "Eagle Ray Gliding Over Seabed"
+        },
+        {
+          "id": "RiCAMpyq2HA",
+          "title": "Diver And Clown Triggerfish Over Reef"
+        },
+        {
+          "id": "-EAS8p_Gp_E",
+          "title": "Swimming Sea Turtle"
+        },
+        {
+          "id": "pnbXR4xqT6U",
+          "title": "Green Sea Turtle Swimming"
+        }
+      ]
     },
     {
       "id": "similan-2023",
@@ -127,7 +254,13 @@
       "region": "Similan Islands, Thailand",
       "year": 2023,
       "dates": "February 16-20, 2023",
-      "diveCount": 17
+      "diveCount": 17,
+      "videos": [
+        {
+          "id": "m911PGqxumw",
+          "title": "White Mouth Moray Eel On Reef"
+        }
+      ]
     },
     {
       "id": "cambodia-2023",
@@ -144,7 +277,44 @@
       "year": 2023,
       "dates": "April 1-4, 2023",
       "diveCount": 7,
-      "videos": []
+      "videos": [
+        {
+          "id": "Qtio6dDgHeg",
+          "title": "Giant Clam On Reef"
+        },
+        {
+          "id": "jX84BY-CiYg",
+          "title": "Two Crocodile Fish on Sandy Seabed"
+        },
+        {
+          "id": "GKt5bdKoluU",
+          "title": "Lionfish On Reef Floor"
+        },
+        {
+          "id": "T-4C-kuJmow",
+          "title": "Giant Clam And Small Fish"
+        },
+        {
+          "id": "ckdECiQH5b4",
+          "title": "Diver Surrounded By Massive Fish School"
+        },
+        {
+          "id": "0h4T3fzu5Dk",
+          "title": "School of Yellowstripe Scad Fish"
+        },
+        {
+          "id": "clPyf3cPa7k",
+          "title": "School of Fish over Reef 3"
+        },
+        {
+          "id": "Sqrk3058SnU",
+          "title": "School Of Fish And Reef"
+        },
+        {
+          "id": "E4SnfIgXZc8",
+          "title": "Green Sea Turtle Resting Under Coral"
+        }
+      ]
     },
     {
       "id": "raja-ampat-liveaboard-2023",
@@ -153,7 +323,128 @@
       "year": 2023,
       "dates": "April 7-12, 2023",
       "diveCount": 16,
-      "videos": []
+      "videos": [
+        {
+          "id": "44Rb24hTgTU",
+          "title": "Diver Pointing At Coral And Reef"
+        },
+        {
+          "id": "PDv9dXtw-Jw",
+          "title": "Coral Reef And Sandy Seabed"
+        },
+        {
+          "id": "P8Gbe6l339c",
+          "title": "Scuba Diving Over Coral Reef"
+        },
+        {
+          "id": "gJusYmDRAaE",
+          "title": "Scuba Diver Over Coral"
+        },
+        {
+          "id": "PfL6i86E0wY",
+          "title": "Blenny And Sea Anemones On Sandy Bottom"
+        },
+        {
+          "id": "wbZQhOp5ksE",
+          "title": "Underwater Bubble Rings And Fish"
+        },
+        {
+          "id": "8-eQjPgbm8I",
+          "title": "Divers Exploring Coral Reef With School Fish"
+        },
+        {
+          "id": "Jdv_w-uGcWo",
+          "title": "Blue Tang School In Ocean"
+        },
+        {
+          "id": "VQEdzZn3I38",
+          "title": "School Of Orange Fish In Reef"
+        },
+        {
+          "id": "AErXvuP2Nt0",
+          "title": "School Of Fish Over Reef 4"
+        },
+        {
+          "id": "Sg_V5NraPfU",
+          "title": "School Of Fish In Underwater Cave"
+        },
+        {
+          "id": "2ugspE5ArPc",
+          "title": "Lionfish on Reef"
+        },
+        {
+          "id": "r4ZODWhyqq8",
+          "title": "Fish School Over Reef"
+        },
+        {
+          "id": "9_b0-Jz3QuY",
+          "title": "Coral Reef With Fish"
+        },
+        {
+          "id": "KUwOXCdavCU",
+          "title": "Coral Reef Floor And Fish"
+        },
+        {
+          "id": "oijwq3o7f8E",
+          "title": "Colorful Coral Reef With Fish"
+        },
+        {
+          "id": "6ONbqri6ZzM",
+          "title": "School of Blue and Yellow Tangs on Reef"
+        },
+        {
+          "id": "08zTr3rYRiQ",
+          "title": "Fish Swimming Near Reef"
+        },
+        {
+          "id": "9dT5-wNNYVY",
+          "title": "Blue Fish School Along Reef Wall"
+        },
+        {
+          "id": "OIoXIKahf5s",
+          "title": "School Of Fish Over Reef 2"
+        },
+        {
+          "id": "MxEMlqPwG6s",
+          "title": "Moray Eel And Fish On Reef"
+        },
+        {
+          "id": "B_7MzlZPRMc",
+          "title": "Garden Eel Field"
+        },
+        {
+          "id": "xSzDX84PYWw",
+          "title": "Cuttlefish On Coral Reef"
+        },
+        {
+          "id": "MkTaf-4Kd04",
+          "title": "Shark Swimming Over Sandy Bottom"
+        },
+        {
+          "id": "gHvPNtY5Nww",
+          "title": "Reef Shark Swimming Over Coral And Sand"
+        },
+        {
+          "id": "fyTDr_nfzh4",
+          "title": "Green Sea Turtle Resting On Coral"
+        },
+        {
+          "id": "cjL3XPU9574",
+          "title": "Gray Reef Shark Over Coral Reef"
+        },
+        {
+          "id": "lx8OgY5dJos",
+          "title": "Manta Ray Swimming"
+        },
+        {
+          "id": "NvbFNYWgoM4",
+          "title": "Giant Manta Ray"
+        },
+        {
+          "id": "auMsoFxhH20",
+          "title": "Black Manta Ray With Remoras"
+        }
+      ]
     },
     {
       "id": "sipadan-2023",
@@ -161,7 +452,53 @@
       "region": "Sipadan / Mabul / Kapalai, Sabah, Malaysia",
       "year": 2023,
       "dates": "April 24-27, 2023",
-      "diveCount": 11
+      "diveCount": 11,
+      "videos": [
+        {
+          "id": "bwjVgTgf1pE",
+          "title": "Diver With Bubbles"
+        },
+        {
+          "id": "6IsXSJwXsmQ",
+          "title": "Diver On The Wall"
+        },
+        {
+          "id": "nDijS6sGEJ8",
+          "title": "Humbug Damselfish And Staghorn Coral"
+        },
+        {
+          "id": "LisN7r-n2KQ",
+          "title": "Tropical Reef With Varied Fish Life"
+        },
+        {
+          "id": "vhA3mhya1V0",
+          "title": "Colorful Fish Swarming Over Coral Reef"
+        },
+        {
+          "id": "4Erpkm1BuZs",
+          "title": "School Of Fish Swimming Underwater"
+        },
+        {
+          "id": "qWU78fFv5cA",
+          "title": "School Of Fish Over Reef"
+        },
+        {
+          "id": "h6IqGDIsNVY",
+          "title": "School Of Bannerfish"
+        },
+        {
+          "id": "npJLupkZLgE",
+          "title": "Longfin Batfish Over Coral Reef"
+        },
+        {
+          "id": "BrKcJl5xmNE",
+          "title": "Large School of Fish Underwater"
+        },
+        {
+          "id": "_sV8-uWnW5s",
+          "title": "Duo Scuba Diving With School of Fish"
+        }
+      ]
     },
     {
       "id": "red-sea-2023",
@@ -169,7 +506,89 @@
       "region": "Red Sea, Egypt",
       "year": 2023,
       "dates": "May 12-17, 2023",
-      "diveCount": 15
+      "diveCount": 15,
+      "videos": [
+        {
+          "id": "rTGAHW45L0I",
+          "title": "Soft Coral Reef"
+        },
+        {
+          "id": "g7OGsxzENXo",
+          "title": "Large Coral Reef Formations"
+        },
+        {
+          "id": "iZhV5Ks2r2o",
+          "title": "Coral Reef Formations"
+        },
+        {
+          "id": "erdBX4ctM8E",
+          "title": "Coral Reef Formation"
+        },
+        {
+          "id": "1MGs6vnkFyo",
+          "title": "Hard Coral Formation And Giant Clam"
+        },
+        {
+          "id": "xDluleiveg4",
+          "title": "Giant Clam Among Soft Corals"
+        },
+        {
+          "id": "0KK97glTBe0",
+          "title": "Scorpionfish Camouflaged On Reef"
+        },
+        {
+          "id": "SNkOxY1iX9E",
+          "title": "Camouflaged Flatfish On Sand"
+        },
+        {
+          "id": "zqgHl61eMBY",
+          "title": "School Of Barracuda Over Reef"
+        },
+        {
+          "id": "XMOrBuDpTeo",
+          "title": "School Of Barracuda In Blue Water"
+        },
+        {
+          "id": "PDmD4NOVhao",
+          "title": "Clownfish in Anemone"
+        },
+        {
+          "id": "K-u1aeFCZ_A",
+          "title": "Barracuda Over Coral Reef"
+        },
+        {
+          "id": "TXjSsJtTngE",
+          "title": "Silky Shark Swimming In Blue Water"
+        },
+        {
+          "id": "iog2uLG6sFs",
+          "title": "Two Dolphins Swimming"
+        },
+        {
+          "id": "ym9DlwL8Z4I",
+          "title": "Spinner Dolphin Pod Swimming"
+        },
+        {
+          "id": "wHNzwX8hCiE",
+          "title": "Pod Of Dolphins In Blue Water"
+        },
+        {
+          "id": "hMMWcaRCCIM",
+          "title": "Oceanic Manta Ray Swimming"
+        },
+        {
+          "id": "N0JxfhFaFTw",
+          "title": "Large School Of Dolphins Swimming"
+        },
+        {
+          "id": "ZnQ_bu8gb5A",
+          "title": "Large Pod Of Dolphins"
+        },
+        {
+          "id": "4_3RGqShrJU",
+          "title": "Diver And Manta Ray In Blue Water"
+        }
+      ]
     },
     {
       "id": "roatan-2024",
@@ -185,7 +604,69 @@
       "region": "Seven Mile Beach / West Wall, Grand Cayman",
       "year": 2026,
       "dates": null,
-      "diveCount": 10
+      "diveCount": 10,
+      "videos": [
+        {
+          "id": "UYHMtTqVoGI",
+          "title": "Scuba Diver and Coral on Sandy Seabed"
+        },
+        {
+          "id": "B9zGvYAY9wo",
+          "title": "Bubble Coral"
+        },
+        {
+          "id": "ahAc-_ry24Y",
+          "title": "Diver's Hand On Reef"
+        },
+        {
+          "id": "wYxANDmPDvk",
+          "title": "Diver Touching Coralline Algae"
+        },
+        {
+          "id": "oTKyPPImiW8",
+          "title": "Lionfish In Reef Cave"
+        },
+        {
+          "id": "1lRikZwysGU",
+          "title": "Coral Reef With Schools Of Fish"
+        },
+        {
+          "id": "u8ZYZMCZvGM",
+          "title": "Colorful Coral Reef With Fish 2"
+        },
+        {
+          "id": "04T_dZeNzpM",
+          "title": "Snakefish On Sandy Bottom"
+        },
+        {
+          "id": "JQybQTbKgTc",
+          "title": "Schools of Fish Over Coral Reef"
+        },
+        {
+          "id": "UCSflHTB2yE",
+          "title": "School Of Fish Over A Coral Reef"
+        },
+        {
+          "id": "1BZ9SQSr93E",
+          "title": "Clownfish In Anemone 2"
+        },
+        {
+          "id": "_13THTh5r1A",
+          "title": "Underwater Coral Reef And Fish"
+        },
+        {
+          "id": "V0vNrTAbKJo",
+          "title": "Stingray Under Coral Ledge"
+        },
+        {
+          "id": "gct3HnEQHHI",
+          "title": "Green Moray Eel and Lionfish"
+        },
+        {
+          "id": "h2Eg7Az5PgY",
+          "title": "Manta Ray Swimming Over Reef"
+        }
+      ]
     }
   ],
   "dives": [
