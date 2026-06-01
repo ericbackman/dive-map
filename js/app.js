@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       setTimeout(() => DiveMap.map.invalidateSize(), 100);
     }
 
+    if (typeof gtag === 'function') gtag('event', 'toggle_traveler', { tab: tabId });
+    if (window.DiveAnalytics) DiveAnalytics.track('toggle_traveler', { tab: tabId });
+
     if (updateHash) {
       history.replaceState(null, '', '#' + tabId);
     }

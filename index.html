@@ -7,6 +7,16 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤿</text></svg>">
   <meta name="description" content="Interactive map of 150+ scuba dive sites around the world">
 
+  <!-- Analytics: Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- See docs/analytics-setup.md for the 5-minute setup guide -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -115,5 +125,10 @@
   <script src="js/map.js"></script>
   <script src="js/travel-path.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Analytics: Cloudflare beacon — async, never blocks map load -->
+  <!-- Configure ENDPOINT in analytics/beacon.js after deploying the Worker -->
+  <!-- See docs/cloudflare-setup.md -->
+  <script src="analytics/beacon.js" async defer></script>
 </body>
 </html>

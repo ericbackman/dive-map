@@ -167,6 +167,8 @@ const DiveMap = {
       marker.on('click', () => {
         const targetZoom = Math.max(this.map.getZoom(), 10);
         this.map.flyTo([dive.lat, dive.lng], targetZoom, { duration: 1 });
+        if (typeof gtag === 'function') gtag('event', 'map_interaction', { site_name: dive.site, dive_type: dive.type });
+        if (window.DiveAnalytics) DiveAnalytics.track('map_interaction', { site: dive.site, type: dive.type });
       });
 
       this.clusterGroup.addLayer(marker);
@@ -179,6 +181,8 @@ const DiveMap = {
   openVideoGallery(tripId) {
     const trip = this.trips[tripId];
     if (!trip || !trip.videos || trip.videos.length === 0) return;
+    if (typeof gtag === 'function') gtag('event', 'trip_expanded', { trip_name: trip.name });
+    if (window.DiveAnalytics) DiveAnalytics.track('trip_expanded', { trip: trip.name });
 
     const modal = document.getElementById('video-modal');
     const titleEl = document.getElementById('video-modal-trip');
