@@ -89,10 +89,10 @@ var ENDPOINT = 'https://dive-analytics.YOUR_SUBDOMAIN.workers.dev/beacon';
 
 ## Step 5 — Configure the dashboard
 
-Open `analytics/dashboard.html` and set `WORKER_BASE`:
+Open `analytics/dashboard.html` and set `WORKER_URL`:
 
 ```js
-var WORKER_BASE = 'https://dive-analytics.YOUR_SUBDOMAIN.workers.dev';
+var WORKER_URL = 'https://dive-analytics.YOUR_SUBDOMAIN.workers.dev';
 ```
 
 ---

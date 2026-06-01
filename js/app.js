@@ -19,6 +19,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       .loadTrips(appData.trips)
       .loadDives(appData.dives);
 
+    // Fire GA4 when any dive site popup opens (e.popup._source is Leaflet's stable
+    // internal for the source layer — the optional chain guards against non-dive popups)
+    DiveMap.map.on('popupopen', (e) => {
+      const dive = e.popup._source?.options?.diveData;
+      if (dive) ga('dive_site_view', { dive_site: dive.site, dive_type: dive.type || 'unknown', dive_location: dive.location });
+    });
+
+    // Wrap openVideoGallery without touching map.js — the popup onclick resolves the
+    // function reference at click time, so the wrapped version catches every call
+    const _origOpenGallery = DiveMap.openVideoGallery.bind(DiveMap);
+    DiveMap.openVideoGallery = function (tripId) {
+      _origOpenGallery(tripId);
+      const trip = DiveMap.trips[tripId];
+      ga('video_gallery_open', { trip_id: tripId, trip_name: trip ? trip.name : tripId });
+    };
+
     TravelPath.init(DiveMap.map);
     TravelPath.load();
 
@@ -47,6 +63,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Failed to load dive data:', err);
     const msg = loading.querySelector('.loading-text');
     if (msg) msg.textContent = 'Failed to load dive data';
+  }
+
+  /* ───────────────── Analytics ───────────────── */
+
+  function ga(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
   }
 
   /* ───────────────── Tab Navigation ───────────────── */
@@ -92,8 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       setTimeout(() => DiveMap.map.invalidateSize(), 100);
     }
 
-    if (typeof gtag === 'function') gtag('event', 'toggle_traveler', { tab: tabId });
-    if (window.DiveAnalytics) DiveAnalytics.track('toggle_traveler', { tab: tabId });
+    ga('tab_view', { tab_name: tabId });
 
     if (updateHash) {
       history.replaceState(null, '', '#' + tabId);
@@ -186,6 +207,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         bestGrid.appendChild(card);
 
         thumb.addEventListener('click', () => {
+          ga('video_play', { video_id: v.id, video_title: v.title, video_source: 'best_of' });
           while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
           const iframe = document.createElement('iframe');
           iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
@@ -265,6 +287,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Click-to-play
         thumb.addEventListener('click', () => {
+          ga('video_play', { video_id: v.id, video_title: v.title, trip_name: trip.name, video_source: 'trip' });
           while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
           const iframe = document.createElement('iframe');
           iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
@@ -332,8 +355,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Search
     const searchInput = document.getElementById('log-search');
+    let searchDebounce;
     searchInput.addEventListener('input', () => {
       renderLogTable(dives, trips);
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => {
+        const q = searchInput.value.trim();
+        if (q.length >= 2) ga('dive_log_search', { search_term: q });
+      }, 1200);
     });
 
     // Initial render

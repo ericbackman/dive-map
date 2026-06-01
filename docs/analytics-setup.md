@@ -68,13 +68,15 @@ Replace both instances of `G-XXXXXXXXXX` with your real Measurement ID and push 
 
 ## Custom events already wired in
 
-The dive map fires three custom events you can see in **Reports → Events**:
+The dive map fires these custom events (see `js/app.js`):
 
 | Event | When it fires | Parameters |
 |-------|--------------|-----------|
-| `map_interaction` | User clicks a dive site pin | `site_name`, `dive_type` |
-| `trip_expanded` | User opens a trip's video gallery | `trip_name` |
-| `toggle_traveler` | User switches between Map / Videos / Log tabs | `tab` |
+| `tab_view` | Map / Videos / Log tab switched | `tab_name` |
+| `dive_site_view` | Dive site popup opened | `dive_site`, `dive_type`, `dive_location` |
+| `video_play` | Video thumbnail clicked | `video_id`, `video_title`, `video_source`, `trip_name` |
+| `video_gallery_open` | Trip gallery opened from map popup | `trip_id`, `trip_name` |
+| `dive_log_search` | Search term typed (1.2 s debounce) | `search_term` |
 
 To explore these in GA4: **Reports → Engagement → Events** (they appear within 24–48 hours).
 For real-time testing: **Configure → DebugView** (use the GA4 Chrome extension to enable debug mode).

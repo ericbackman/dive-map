@@ -5,8 +5,8 @@ name              = "dive-analytics"
 main              = "worker.js"
 compatibility_date = "2024-09-23"
 
-# KV namespace — create this in the CF dashboard, then paste the ID below.
-# Dashboard path: Workers & Pages → KV → Create namespace → name it "DIVE_ANALYTICS"
+# KV namespace — run: wrangler kv namespace create ANALYTICS_KV
+# Then paste the returned id below.
 [[kv_namespaces]]
 binding = "ANALYTICS_KV"
-id      = "YOUR_KV_NAMESPACE_ID"   # replace after running: wrangler kv namespace create ANALYTICS_KV
+id      = "YOUR_KV_NAMESPACE_ID"
