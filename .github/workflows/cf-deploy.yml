@@ -1,0 +1,24 @@
+name: Deploy to Cloudflare Pages
+
+# Dual-serve: GitHub Pages stays live at ericbackman.github.io/dive-map;
+# this additionally publishes to dives.ericbackman.com.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          cp -r index.html css data js docs _site/
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3a9b0f83a62fd482af5f54911dd90808
+          command: pages deploy _site --project-name dive-map --branch main
