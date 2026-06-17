@@ -1,0 +1,10 @@
+{
+  "_comment": "Copy this file to .mcp.json and edit the paths for your machine. .mcp.json is gitignored because the youtube MCP server lives outside this repo and its path is machine-specific. 'command' should point at the Python interpreter in your youtube-mcp virtualenv, and 'cwd' at the youtube-mcp project directory. On macOS/Linux these typically use a 'bin/python' venv layout; on Windows use '.venv\\Scripts\\python.exe'.",
+  "mcpServers": {
+    "youtube": {
+      "command": "/path/to/youtube-mcp/.venv/bin/python",
+      "args": ["-m", "youtube_mcp.server"],
+      "cwd": "/path/to/youtube-mcp"
+    }
+  }
+}

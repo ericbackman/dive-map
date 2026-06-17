@@ -1,0 +1,9 @@
+# Python dependencies for the dive-map helper scripts
+# (scripts/scan_all_icloud.py, scripts/classify_dive_videos.py)
+#
+# Note: these scripts also require the ffmpeg/ffprobe command-line tools to be
+# installed and on your PATH (not a pip package). Install via your OS package
+# manager, e.g. `brew install ffmpeg` on macOS.
+
+# Google Gemini SDK (imported as `from google import genai`)
+google-genai

@@ -13,7 +13,7 @@ from google.genai import types
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-ICLOUD_BASE = Path(r"C:\Users\ericb\iCloudPhotos\Shared")
+ICLOUD_BASE = Path(os.environ.get("DIVE_ICLOUD_BASE", Path.home() / "iCloudPhotos" / "Shared"))
 
 TRIP_FOLDERS = {
     "2023 - Raja Ampat": "Raja Ampat, Indonesia",

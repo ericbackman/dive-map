@@ -21,6 +21,9 @@ node_modules/
 dist/
 .cache/
 
+# Machine-specific MCP config (see .mcp.json.example)
+.mcp.json
+
 # Large media (use Git LFS or external hosting)
 *.mp4
 *.mov
