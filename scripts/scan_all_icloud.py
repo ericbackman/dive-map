@@ -14,7 +14,7 @@ from google.genai import types
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-ICLOUD_BASE = Path(r"C:\Users\ericb\iCloudPhotos")
+ICLOUD_BASE = Path(os.environ.get("DIVE_ICLOUD_BASE", Path.home() / "iCloudPhotos"))
 
 ALREADY_DONE = {
     "2023 - Raja Ampat",
