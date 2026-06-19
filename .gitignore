@@ -29,3 +29,17 @@ dist/
 *.mov
 *.avi
 *.mkv
+
+# Claude local config (machine-specific)
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Cloudflare
+.wrangler/
+
+# Tooling run logs
+scripts/classify_log_*.json
+scripts/scan_log_*.json
