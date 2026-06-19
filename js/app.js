@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         thumb.addEventListener('click', () => {
           while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
           const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
+          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&mute=1&playsinline=1&rel=0`;
           iframe.frameBorder = '0';
           iframe.allowFullscreen = true;
           iframe.allow = 'autoplay; encrypted-media';
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         thumb.addEventListener('click', () => {
           while (thumb.firstChild) thumb.removeChild(thumb.firstChild);
           const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
+          iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(v.id)}?autoplay=1&mute=1&playsinline=1&rel=0`;
           iframe.frameBorder = '0';
           iframe.allowFullscreen = true;
           iframe.allow = 'autoplay; encrypted-media';
