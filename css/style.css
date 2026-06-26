@@ -1060,6 +1060,167 @@ header {
   border-top-color: rgba(26, 124, 173, 0.3) !important;
 }
 
+/* ─── Guided trip tour ─── */
+
+/* ▶ play button on each linear trip row in the Trips panel */
+.tour-play-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding-left: 1px; /* optically center the ▶ glyph */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--foam);
+  font-size: 9px;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.travel-toggle-btn:hover .tour-play-btn {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.tour-play-btn:hover {
+  background: var(--coral);
+  color: #fff;
+  transform: scale(1.12);
+}
+
+.tour-play-btn.touring {
+  background: var(--coral);
+  color: #fff;
+}
+
+/* Floating navigation card overlaid on the map */
+.tour-card {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 1200;
+  width: min(320px, calc(100% - 32px));
+  padding: 14px 16px 16px;
+  background: linear-gradient(180deg, rgba(13, 59, 102, 0.97), rgba(10, 22, 40, 0.97));
+  border: 1px solid rgba(26, 124, 173, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  animation: tour-card-in 0.25s ease;
+}
+
+@keyframes tour-card-in {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.tour-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tour-card-trip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--foam);
+}
+
+.tour-card-close {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.tour-card-close:hover {
+  background: var(--coral);
+  color: #fff;
+}
+
+.tour-card-num {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ocean-light);
+}
+
+.tour-card-name {
+  margin: 2px 0 14px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tour-card-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.tour-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid rgba(26, 124, 173, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s, opacity 0.18s;
+}
+
+.tour-btn:hover:not(:disabled) {
+  background: rgba(26, 124, 173, 0.35);
+}
+
+.tour-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.tour-next {
+  flex: 1.4;
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff;
+}
+
+.tour-next:hover:not(:disabled) {
+  background: #ff8577;
+}
+
+.tour-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Pulsing ring around the current stop marker */
+.tour-stop-current {
+  border-radius: 50%;
+  animation: tour-pulse 1.6s ease-out infinite;
+}
+
+@keyframes tour-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(255, 111, 97, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0); }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   header {
