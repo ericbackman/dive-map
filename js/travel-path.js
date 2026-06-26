@@ -10,6 +10,7 @@
 const TravelPath = {
   map: null,
   trips: [],
+  tour: null, // active guided-tour state, or null when no tour is running
 
   VALID_TYPES: new Set(['home', 'hub', 'transit', 'stop', 'dive']),
 
@@ -330,6 +331,21 @@ const TravelPath = {
             L.DomEvent.preventDefault(e);
             self.toggle(trip);
           });
+
+          // Only ordered (linear) trips have a meaningful "next stop", so only
+          // they get a ▶ button that launches the step-through guided tour.
+          if (trip.mode === 'linear' && trip.data.stops && trip.data.stops.length > 1) {
+            var play = document.createElement('span');
+            play.className   = 'tour-play-btn';
+            play.textContent = '▶';
+            play.title       = 'Play guided tour';
+            btn.appendChild(play);
+            trip.playBtn = play;
+            L.DomEvent.on(play, 'click', function (e) {
+              L.DomEvent.stop(e); // don't also fire the row's line-toggle
+              self.startTour(trip);
+            });
+          }
         });
 
         return container;
@@ -350,5 +366,250 @@ const TravelPath = {
     if (trip.controlBtn) {
       trip.controlBtn.classList.toggle('active', trip.visible);
     }
+  },
+
+  // ─── Guided tour — step through a trip one stop at a time ──────────────────
+
+  startTour(trip) {
+    if (!trip.data.stops || trip.data.stops.length === 0) return;
+
+    this.endTour(); // only one tour at a time
+
+    // Hide this trip's "all lines at once" overlay while touring so the map
+    // shows just the current leg, not the full spaghetti. Remember its state
+    // so we can put it back on exit.
+    var wasVisible = trip.visible;
+    if (trip.visible) this.toggle(trip);
+
+    this.tour = {
+      trip: trip,
+      stops: trip.data.stops,
+      index: 0,
+      layer: L.layerGroup().addTo(this.map),
+      card: null,
+      els: null,
+      keyHandler: null,
+      restoreVisible: wasVisible,
+    };
+
+    if (trip.playBtn) trip.playBtn.classList.add('touring');
+
+    this.buildTourCard();
+
+    // Keyboard: ← / → to move between stops, Esc to exit.
+    var self = this;
+    this.tour.keyHandler = function (e) {
+      if (!self.tour) return;
+      if (e.key === 'ArrowRight') self.tourStep(1);
+      else if (e.key === 'ArrowLeft') self.tourStep(-1);
+      else if (e.key === 'Escape') self.endTour();
+    };
+    document.addEventListener('keydown', this.tour.keyHandler);
+
+    this.tourGoTo(0);
+  },
+
+  tourStep(delta) {
+    if (this.tour) this.tourGoTo(this.tour.index + delta);
+  },
+
+  tourGoTo(index) {
+    if (!this.tour) return;
+    var stops = this.tour.stops;
+    var clamped = Math.max(0, Math.min(index, stops.length - 1));
+    this.tour.index = clamped;
+
+    var from = clamped > 0 ? stops[clamped - 1] : null;
+    var to = stops[clamped];
+
+    this.frameHop(from, to);
+    this.renderTourPath(stops, clamped);
+    this.updateTourCard();
+  },
+
+  /**
+   * Decide how the camera moves as you step from one stop to the next.
+   *
+   * THIS is the knob that controls how the tour *feels*. Two pure strategies:
+   *   • "fit both"    — frame the previous AND next stop together so the viewer
+   *                     sees the leg of the journey. Great storytelling, but a
+   *                     long leg (e.g. Makassar → Singapore) zooms way out.
+   *   • "fly to next" — fly straight to the destination at a fixed zoom. Always
+   *                     readable, but you lose the sense of distance travelled.
+   *
+   * The current behaviour is a hybrid: short legs frame both endpoints; long
+   * legs just fly to the destination. Tune FAR_KM / the zooms to taste.
+   *
+   * @param {?{lat:number,lng:number}} from previous stop (null on the first stop)
+   * @param {{lat:number,lng:number}}  to   the stop we're moving to
+   */
+  frameHop(from, to) {
+    var map = this.map;
+    var toLL = [to.lat, to.lng];
+
+    if (!from) {
+      map.flyTo(toLL, Math.max(map.getZoom(), 6), { duration: 1.2 });
+      return;
+    }
+
+    var fromLL = [from.lat, from.lng];
+    var FAR_KM = 1500;
+    var legKm = map.distance(fromLL, toLL) / 1000;
+
+    if (legKm > FAR_KM) {
+      map.flyTo(toLL, 6, { duration: 1.6 });
+    } else {
+      map.flyToBounds(L.latLngBounds([fromLL, toLL]).pad(0.4), {
+        duration: 1.4,
+        maxZoom: 9,
+      });
+    }
+  },
+
+  renderTourPath(stops, index) {
+    var trip = this.tour.trip;
+    var layer = this.tour.layer;
+    layer.clearLayers();
+    var ll = function (s) { return [s.lat, s.lng]; };
+
+    // Faint trace of everywhere visited so far
+    if (index > 1) {
+      layer.addLayer(L.polyline(stops.slice(0, index + 1).map(ll), {
+        color: trip.color, weight: 2, opacity: 0.25,
+      }));
+    }
+
+    // The leg you just travelled, animated
+    if (index > 0) {
+      layer.addLayer(L.polyline.antPath([ll(stops[index - 1]), ll(stops[index])], {
+        delay: 500,
+        dashArray: [10, 20],
+        weight: 3.5,
+        color: trip.pathColor,
+        pulseColor: trip.color,
+        hardwareAccelerated: true,
+      }));
+    }
+
+    // Faint dashed preview of where "Next" will take you
+    if (index < stops.length - 1) {
+      layer.addLayer(L.polyline([ll(stops[index]), ll(stops[index + 1])], {
+        color: trip.color, weight: 2, opacity: 0.3, dashArray: '4, 10',
+      }));
+    }
+
+    // Stop dots: small for visited, big highlighted dot for the current stop
+    stops.slice(0, index + 1).forEach(function (s, i) {
+      var current = i === index;
+      var size = current ? 30 : 14;
+      var marker = L.marker(ll(s), {
+        icon: L.divIcon({
+          className: 'travel-stop tour-stop' + (current ? ' tour-stop-current' : ''),
+          html: this.buildStopIcon(s.num, current ? s.type : 'transit', size, trip.color),
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+        }),
+        zIndexOffset: current ? 1000 : 100,
+      });
+      if (current) {
+        marker.bindTooltip(s.name, {
+          direction: 'top',
+          offset: [0, -size / 2 - 6],
+          className: 'travel-tooltip',
+          permanent: true,
+        }).openTooltip();
+      }
+      layer.addLayer(marker);
+    }, this);
+  },
+
+  buildTourCard() {
+    var self = this;
+    var trip = this.tour.trip;
+
+    var card = document.createElement('div');
+    card.className = 'tour-card';
+
+    // Top row: trip identity + close
+    var top = document.createElement('div');
+    top.className = 'tour-card-top';
+
+    var label = document.createElement('span');
+    label.className = 'tour-card-trip';
+    label.textContent = trip.icon + ' ' + trip.name;
+
+    var close = document.createElement('button');
+    close.className = 'tour-card-close';
+    close.setAttribute('aria-label', 'Exit tour');
+    close.textContent = '✕';
+    L.DomEvent.on(close, 'click', function (e) { L.DomEvent.stop(e); self.endTour(); });
+
+    top.appendChild(label);
+    top.appendChild(close);
+
+    // Stop counter + name
+    var counter = document.createElement('div');
+    counter.className = 'tour-card-num';
+    var name = document.createElement('div');
+    name.className = 'tour-card-name';
+
+    // Nav row: prev + next arrows
+    var nav = document.createElement('div');
+    nav.className = 'tour-card-nav';
+
+    var prev = document.createElement('button');
+    prev.className = 'tour-btn tour-prev';
+    prev.textContent = '← Prev';
+    L.DomEvent.on(prev, 'click', function (e) { L.DomEvent.stop(e); self.tourStep(-1); });
+
+    var next = document.createElement('button');
+    next.className = 'tour-btn tour-next';
+    next.textContent = 'Next →';
+    L.DomEvent.on(next, 'click', function (e) { L.DomEvent.stop(e); self.tourStep(1); });
+
+    nav.appendChild(prev);
+    nav.appendChild(next);
+
+    card.appendChild(top);
+    card.appendChild(counter);
+    card.appendChild(name);
+    card.appendChild(nav);
+
+    // The card floats over the map — keep map drag/zoom from firing through it.
+    L.DomEvent.disableClickPropagation(card);
+    L.DomEvent.disableScrollPropagation(card);
+
+    this.map.getContainer().appendChild(card);
+
+    this.tour.card = card;
+    this.tour.els = { counter: counter, name: name, prev: prev, next: next };
+  },
+
+  updateTourCard() {
+    if (!this.tour || !this.tour.els) return;
+    var stops = this.tour.stops;
+    var i = this.tour.index;
+    var els = this.tour.els;
+    els.counter.textContent = 'Stop ' + (i + 1) + ' of ' + stops.length;
+    els.name.textContent = stops[i].name;
+    els.prev.disabled = i === 0;
+    els.next.disabled = i === stops.length - 1;
+  },
+
+  endTour() {
+    if (!this.tour) return;
+    var t = this.tour;
+
+    if (t.keyHandler) document.removeEventListener('keydown', t.keyHandler);
+    if (t.card && t.card.parentNode) t.card.parentNode.removeChild(t.card);
+    if (t.layer) this.map.removeLayer(t.layer);
+    if (t.trip && t.trip.playBtn) t.trip.playBtn.classList.remove('touring');
+
+    var trip = t.trip;
+    var restore = t.restoreVisible;
+    this.tour = null;
+
+    // Put the static line overlay back if it was on before the tour started
+    if (restore && trip && !trip.visible) this.toggle(trip);
   },
 };
