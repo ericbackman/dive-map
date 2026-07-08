@@ -1060,6 +1060,137 @@ header {
   border-top-color: rgba(26, 124, 173, 0.3) !important;
 }
 
+/* Breathing page */
+.breath-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.breath-card {
+  background: rgba(26, 124, 173, 0.08);
+  border: 1px solid rgba(26, 124, 173, 0.18);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.breath-card-big {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--foam);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.breath-card-label {
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.breath-card-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.breath-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.breath-leg {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.breath-leg-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.breath-leg-dot.filled {
+  background: #3fa7d6;
+}
+
+.breath-leg-dot.hollow {
+  background: var(--ocean-deep);
+  border: 2px solid #3fa7d6;
+}
+
+.breath-leg-band {
+  width: 16px;
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(63, 167, 214, 0.28);
+  flex: none;
+}
+
+.breath-chart-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(13, 59, 102, 0.14);
+  border: 1px solid rgba(26, 124, 173, 0.14);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.breath-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.breath-hit {
+  cursor: crosshair;
+}
+
+.breath-tip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  max-width: 240px;
+  background: rgba(10, 22, 40, 0.97);
+  border: 1px solid rgba(26, 124, 173, 0.4);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.breath-tip-name {
+  font-weight: 600;
+  color: var(--foam);
+}
+
+.breath-tip-val {
+  color: #7fc6e6;
+  margin-top: 3px;
+}
+
+.breath-tip-sub {
+  color: var(--text-muted);
+}
+
+.breath-note {
+  max-width: 780px;
+  margin-top: 20px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   header {
@@ -1074,9 +1205,21 @@ header {
     display: none;
   }
 
+  .tab-nav {
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .tab-btn {
     font-size: 0.75rem;
     padding: 5px 10px;
+    white-space: nowrap;
+    flex: 0 0 auto;
   }
 
   .sidebar {
@@ -1117,5 +1260,14 @@ header {
 
   .video-modal-header {
     padding: 16px;
+  }
+
+  .breath-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .breath-chart-wrap {
+    padding: 6px 4px;
   }
 }

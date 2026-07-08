@@ -3,6 +3,89 @@
     "name": "Eric Backman",
     "totalDives": 156
   },
+    "breathing": {
+      "_comment": "Median seconds-per-breath per trip, measured from the natural regulator breathing in Eric's own GoPro clips (envelope autocorrelation of exhale bursts). Higher = slower, calmer breathing. Dolphin-chase (exertion) clips excluded; a trip needs >=3 clean clips to earn a median. Unlogged points are date-clusters not yet in the trip list. Source: dive-channel/pipeline/breath_timeline.py.",
+      "unit": "seconds_per_breath",
+      "series": [
+        {
+          "trip_id": null,
+          "label": null,
+          "month": "2022-06",
+          "sec_per_breath": 7.6,
+          "q1": 6.8,
+          "q3": 7.7,
+          "breaths_per_min": 7.9,
+          "n_clips": 6,
+          "logged": false
+        },
+        {
+          "trip_id": "hawaii-2022",
+          "label": "Hawaii Big Island",
+          "month": "2022-12",
+          "sec_per_breath": 7.4,
+          "q1": 7.3,
+          "q3": 7.4,
+          "breaths_per_min": 8.1,
+          "n_clips": 5,
+          "logged": true
+        },
+        {
+          "trip_id": "raja-ampat-homestay-2023",
+          "label": "Raja Ampat Homestay",
+          "month": "2023-04",
+          "sec_per_breath": 10.7,
+          "q1": 3.0,
+          "q3": 11.4,
+          "breaths_per_min": 5.6,
+          "n_clips": 5,
+          "logged": true
+        },
+        {
+          "trip_id": "raja-ampat-liveaboard-2023",
+          "label": "Raja Ampat Liveaboard",
+          "month": "2023-04",
+          "sec_per_breath": 9.2,
+          "q1": 8.6,
+          "q3": 9.8,
+          "breaths_per_min": 6.5,
+          "n_clips": 3,
+          "logged": true
+        },
+        {
+          "trip_id": "sipadan-2023",
+          "label": "Sipadan (Scuba Junkie)",
+          "month": "2023-04",
+          "sec_per_breath": 8.6,
+          "q1": 8.6,
+          "q3": 9.2,
+          "breaths_per_min": 7.0,
+          "n_clips": 6,
+          "logged": true
+        },
+        {
+          "trip_id": "red-sea-2023",
+          "label": "Red Sea Liveaboard",
+          "month": "2023-05",
+          "sec_per_breath": 8.6,
+          "q1": 8.4,
+          "q3": 9.1,
+          "breaths_per_min": 7.0,
+          "n_clips": 5,
+          "logged": true
+        },
+        {
+          "trip_id": null,
+          "label": null,
+          "month": "2025-12",
+          "sec_per_breath": 5.3,
+          "q1": 2.7,
+          "q3": 6.4,
+          "breaths_per_min": 11.3,
+          "n_clips": 7,
+          "logged": false
+        }
+      ]
+    },
   "bestVideos": [
     {
       "id": "0QkoWeVmTYg",

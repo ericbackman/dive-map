@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTabs();
     renderVideosPage(appData);
     initDiveLog(appData);
+    renderBreathingPage(appData);
 
     // Escape key closes video gallery
     document.addEventListener('keydown', (e) => {
@@ -59,13 +60,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Support hash routing
     const hash = window.location.hash.replace('#', '') || 'map';
-    if (['map', 'videos', 'log'].includes(hash)) {
+    if (['map', 'videos', 'log', 'breathing'].includes(hash)) {
       switchTab(hash, false);
     }
 
     window.addEventListener('hashchange', () => {
       const h = window.location.hash.replace('#', '');
-      if (['map', 'videos', 'log'].includes(h)) switchTab(h, false);
+      if (['map', 'videos', 'log', 'breathing'].includes(h)) switchTab(h, false);
     });
   }
 
@@ -79,10 +80,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const mapEl = document.getElementById('map');
     const videosEl = document.getElementById('page-videos');
     const logEl = document.getElementById('page-log');
+    const breathingEl = document.getElementById('page-breathing');
 
     mapEl.classList.toggle('active', tabId === 'map');
     videosEl.classList.toggle('active', tabId === 'videos');
     logEl.classList.toggle('active', tabId === 'log');
+    breathingEl.classList.toggle('active', tabId === 'breathing');
 
     // Body scroll: map tab locks scroll, others allow it
     document.body.style.overflow = tabId === 'map' ? 'hidden' : 'auto';
@@ -460,5 +463,155 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       tbody.appendChild(tr);
     });
+  }
+
+  /* ───────────────── Breathing Page ───────────────── */
+
+  function renderBreathingPage(data) {
+    const container = document.getElementById('breathing-content');
+    const breathing = data.breathing;
+    if (!container || !breathing || !breathing.series || breathing.series.length === 0) {
+      if (container) {
+        const empty = document.createElement('div');
+        empty.className = 'videos-empty';
+        empty.textContent = 'No breathing data yet.';
+        container.appendChild(empty);
+      }
+      return;
+    }
+
+    const trips = {};
+    (data.trips || []).forEach(t => { trips[t.id] = t; });
+    const S = breathing.series.slice().sort((a, b) => a.month.localeCompare(b.month));
+
+    const monthName = m => {
+      const [y, mo] = m.split('-');
+      return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][+mo - 1] + " '" + y.slice(2);
+    };
+    const labelOf = s => s.logged ? (s.label || (trips[s.trip_id] && trips[s.trip_id].name) || monthName(s.month)) : monthName(s.month);
+
+    // ── Stat cards ──
+    const calmest = S.reduce((a, b) => (b.sec_per_breath > a.sec_per_breath ? b : a));
+    const totalClips = S.reduce((n, s) => n + s.n_clips, 0);
+    const loggedCount = S.filter(s => s.logged).length;
+    const cards = [
+      { big: calmest.sec_per_breath.toFixed(1) + ' s', label: 'Calmest breathing', sub: labelOf(calmest) },
+      { big: (60 / calmest.sec_per_breath).toFixed(1), label: 'Breaths per minute there', sub: 'vs a topside ~12–16' },
+      { big: totalClips + '', label: 'Clips analysed', sub: 'across ' + loggedCount + ' logged trips' }
+    ];
+    const cardRow = document.createElement('div');
+    cardRow.className = 'breath-cards';
+    cards.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'breath-card';
+      el.innerHTML = `<div class="breath-card-big">${c.big}</div>`
+        + `<div class="breath-card-label">${c.label}</div>`
+        + `<div class="breath-card-sub">${c.sub}</div>`;
+      cardRow.appendChild(el);
+    });
+    container.appendChild(cardRow);
+
+    // ── Legend ──
+    const legend = document.createElement('div');
+    legend.className = 'breath-legend';
+    legend.innerHTML =
+      '<span class="breath-leg"><span class="breath-leg-dot filled"></span>logged trip</span>'
+      + '<span class="breath-leg"><span class="breath-leg-dot hollow"></span>date cluster (not yet logged)</span>'
+      + '<span class="breath-leg"><span class="breath-leg-band"></span>middle 50% of that trip’s clips</span>';
+    container.appendChild(legend);
+
+    // ── Chart (hand-built SVG, no chart library — matches the no-build-step site) ──
+    const chartWrap = document.createElement('div');
+    chartWrap.className = 'breath-chart-wrap';
+    const W = 900, H = 440, ML = 52, MR = 26, MT = 26, MB = 96;
+    const PW = W - ML - MR, PH = H - MT - MB, YMAX = 12;
+    const X = i => ML + PW * (i + 0.5) / S.length;
+    const Y = v => MT + PH * (1 - v / YMAX);
+    const BLUE = '#3fa7d6', BAND = 'rgba(63,167,214,0.16)', GRID = 'rgba(154,160,166,0.16)';
+    const AXIS = 'rgba(154,160,166,0.4)', DEEP = '#0a1628', MUTED = '#9aa0a6';
+
+    let svg = `<svg viewBox="0 0 ${W} ${H}" class="breath-svg" role="img" aria-label="Line chart of median seconds per breath across ${S.length} dive date-clusters from ${monthName(S[0].month)} to ${monthName(S[S.length - 1].month)}. Values rise from about 7.5 seconds in 2022 to a calm 8.6 to 10.7 seconds through the spring 2023 dive season, then fall to a more variable 5.3 seconds in December 2025 after time away from diving.">`;
+    for (let g = 2; g <= YMAX; g += 2) {
+      svg += `<line x1="${ML}" y1="${Y(g)}" x2="${W - MR}" y2="${Y(g)}" stroke="${GRID}" stroke-width="1"/>`;
+      svg += `<text x="${ML - 10}" y="${Y(g) + 4}" text-anchor="end" font-size="12" fill="${MUTED}">${g}</text>`;
+    }
+    svg += `<line x1="${ML}" y1="${Y(0)}" x2="${W - MR}" y2="${Y(0)}" stroke="${AXIS}" stroke-width="1"/>`;
+    svg += `<text x="14" y="${MT + PH / 2}" font-size="12" fill="${MUTED}" transform="rotate(-90 14 ${MT + PH / 2})" text-anchor="middle">seconds per breath</text>`;
+
+    // IQR bands
+    S.forEach((s, i) => {
+      if (s.q3 > s.q1) {
+        const w = 16, y = Y(s.q3), h = Math.max(2, Y(s.q1) - Y(s.q3));
+        svg += `<rect x="${(X(i) - w / 2).toFixed(1)}" y="${y.toFixed(1)}" width="${w}" height="${h.toFixed(1)}" rx="5" fill="${BAND}"/>`;
+      }
+    });
+    // median line
+    let d = '';
+    S.forEach((s, i) => { d += (i ? ' L ' : 'M ') + X(i).toFixed(1) + ' ' + Y(s.sec_per_breath).toFixed(1); });
+    svg += `<path d="${d}" fill="none" stroke="${BLUE}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>`;
+
+    // gap annotation if any adjacent pair is >1 year apart
+    for (let i = 1; i < S.length; i++) {
+      const gapYrs = (new Date(S[i].month) - new Date(S[i - 1].month)) / 3.15576e10;
+      if (gapYrs >= 1) {
+        const gx = (X(i) + X(i - 1)) / 2;
+        svg += `<line x1="${gx}" y1="${MT}" x2="${gx}" y2="${MT + PH}" stroke="${AXIS}" stroke-width="1" stroke-dasharray="4 5"/>`;
+        svg += `<text x="${gx}" y="${MT + 12}" text-anchor="middle" font-size="11" fill="${MUTED}">${Math.round(gapYrs * 10) / 10} yrs away</text>`;
+      }
+    }
+    // dots + labels + hit targets
+    S.forEach((s, i) => {
+      const cx = X(i), cy = Y(s.sec_per_breath);
+      svg += `<text x="${cx}" y="${cy - 12}" text-anchor="middle" font-size="12" font-weight="600" fill="#e8eaed">${s.sec_per_breath.toFixed(1)}</text>`;
+      if (s.logged) {
+        svg += `<circle cx="${cx}" cy="${cy}" r="6" fill="${BLUE}" stroke="${DEEP}" stroke-width="2"/>`;
+      } else {
+        svg += `<circle cx="${cx}" cy="${cy}" r="6" fill="${DEEP}" stroke="${BLUE}" stroke-width="2"/>`;
+      }
+      const lbl = labelOf(s).replace(/\s*\(.*?\)/, '');  // drop parentheticals for the axis
+      svg += `<text x="${cx}" y="${H - MB + 26}" text-anchor="end" font-size="12" fill="${MUTED}" transform="rotate(-32 ${cx} ${H - MB + 26})">${lbl}</text>`;
+      svg += `<text x="${cx}" y="${H - 8}" text-anchor="middle" font-size="10.5" fill="${AXIS}">n=${s.n_clips}</text>`;
+      svg += `<rect class="breath-hit" data-i="${i}" x="${(cx - PW / S.length / 2).toFixed(1)}" y="${MT}" width="${(PW / S.length).toFixed(1)}" height="${PH}" fill="transparent"/>`;
+    });
+    svg += '</svg>';
+    chartWrap.innerHTML = svg;
+
+    const tip = document.createElement('div');
+    tip.className = 'breath-tip';
+    tip.style.display = 'none';
+    chartWrap.appendChild(tip);
+    container.appendChild(chartWrap);
+
+    chartWrap.querySelectorAll('.breath-hit').forEach(r => {
+      r.addEventListener('mousemove', e => {
+        const s = S[+r.dataset.i];
+        const trip = s.logged ? trips[s.trip_id] : null;
+        const where = trip ? `${trip.region || ''}` : 'Trip not yet in the dive log';
+        const dates = trip ? (trip.dates || '') : monthName(s.month);
+        tip.innerHTML =
+          `<div class="breath-tip-name">${labelOf(s)}</div>`
+          + `<div class="breath-tip-sub">${dates}${where ? ' · ' + where : ''}</div>`
+          + `<div class="breath-tip-val">${s.sec_per_breath.toFixed(1)} s / breath &middot; ${s.breaths_per_min.toFixed(1)} /min</div>`
+          + `<div class="breath-tip-sub">middle 50%: ${s.q1.toFixed(1)}–${s.q3.toFixed(1)} s · ${s.n_clips} clip${s.n_clips > 1 ? 's' : ''}</div>`;
+        const b = chartWrap.getBoundingClientRect();
+        let x = e.clientX - b.left + 14, y = e.clientY - b.top - 8;
+        if (x > b.width - 220) x -= 240;
+        tip.style.left = x + 'px';
+        tip.style.top = y + 'px';
+        tip.style.display = 'block';
+      });
+      r.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    });
+
+    // ── Method note (honest about how it's measured and its limits) ──
+    const note = document.createElement('p');
+    note.className = 'breath-note';
+    note.innerHTML =
+      'Each point is the median gap between exhales, detected from the natural regulator sound in my own '
+      + 'GoPro Hero10 clips (no dive-computer data — this is pulled straight from the audio). Fast dolphin-chase '
+      + 'clips are set aside as exertion rather than resting technique, and a trip needs at least three clean clips '
+      + 'to earn a point. Breathing lengthened across the back-to-back 2023 liveaboards, then came back faster and '
+      + 'more variable in late 2025 after a long spell out of the water.';
+    container.appendChild(note);
   }
 });

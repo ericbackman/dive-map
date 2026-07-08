@@ -35,6 +35,7 @@
       <button class="tab-btn active" data-tab="map">Map</button>
       <button class="tab-btn" data-tab="videos">Videos</button>
       <button class="tab-btn" data-tab="log">Dive Log</button>
+      <button class="tab-btn" data-tab="breathing">Breathing</button>
     </nav>
     <div class="stats">
       <div><span id="dive-count" class="stat-value">0</span> dives</div>
@@ -91,6 +92,17 @@
         </table>
         <div class="log-empty" id="log-empty" style="display:none;">No dives match your search.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- Tab 4: Breathing -->
+  <section id="page-breathing" class="tab-page tab-content-page">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>Breathing Over the Years</h2>
+        <p class="page-subtitle">Seconds per breath on each dive trip, measured from the natural regulator sound in my own GoPro footage — higher means slower, calmer breathing</p>
+      </div>
+      <div id="breathing-content"></div>
     </div>
   </section>
 
