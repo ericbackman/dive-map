@@ -96,7 +96,13 @@
       "region": "Islas del Rosario, Cartagena, Colombia",
       "year": 2022,
       "dates": "February 19–21, 2022",
-      "diveCount": 7
+      "diveCount": 7,
+      "videos": [
+        {
+          "id": "iw3DXeMtQeM",
+          "title": "Spotted Moray Eel on a Night Dive"
+        }
+      ]
     },
     {
       "id": "hawaii-2022",
@@ -143,24 +149,8 @@
           "title": "Colorful Coral Reef With Yellow Tangs"
         },
         {
-          "id": "0TXuAivb7Qk",
-          "title": "School Of Fish Over Healthy Coral Reef"
-        },
-        {
-          "id": "_38TGKQu3aA",
-          "title": "Coral Reef With Small Fish"
-        },
-        {
-          "id": "iw3DXeMtQeM",
-          "title": "Spotted Moray Eel In A Cave"
-        },
-        {
           "id": "tJyxxWV7bRM",
           "title": "Moray Eel In Reef"
-        },
-        {
-          "id": "r6QHuzIFrjg",
-          "title": "Green Moray Eel On Reef"
         },
         {
           "id": "O_HJb3l_fpI",
@@ -181,10 +171,6 @@
         {
           "id": "-VjrlpWbnG4",
           "title": "Night Manta Ray Dive 2"
-        },
-        {
-          "id": "7pYfLcQfMt0",
-          "title": "Black Manta Ray Over Reef"
         }
       ]
     },
@@ -225,14 +211,6 @@
           "title": "Fish On Sandy Reef Floor"
         },
         {
-          "id": "yc80ho5-UKQ",
-          "title": "Scuba Diver And Triggerfish"
-        },
-        {
-          "id": "4nDTflBh41M",
-          "title": "Green Moray Eel In Coral Reef"
-        },
-        {
           "id": "tK1621jVVSE",
           "title": "Eagle Ray Gliding Over Seabed"
         },
@@ -247,6 +225,18 @@
         {
           "id": "pnbXR4xqT6U",
           "title": "Green Sea Turtle Swimming"
+        },
+        {
+          "id": "0TXuAivb7Qk",
+          "title": "School Of Fish Over Healthy Coral Reef"
+        },
+        {
+          "id": "_38TGKQu3aA",
+          "title": "Coral Reef With Small Fish"
+        },
+        {
+          "id": "7pYfLcQfMt0",
+          "title": "Black Manta Ray While Snorkeling"
         }
       ]
     },
@@ -598,7 +588,17 @@
       "region": "West End, Roatan, Bay Islands, Honduras",
       "year": 2024,
       "dates": "April 22-27, 2024",
-      "diveCount": 12
+      "diveCount": 12,
+      "videos": [
+        {
+          "id": "r6QHuzIFrjg",
+          "title": "Green Moray Eel on Reef"
+        },
+        {
+          "id": "4nDTflBh41M",
+          "title": "Green Moray Eel in Coral Reef"
+        }
+      ]
     },
     {
       "id": "cayman-2026",
