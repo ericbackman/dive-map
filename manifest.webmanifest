@@ -1,0 +1,15 @@
+{
+  "name": "Eric's Dive Map",
+  "short_name": "Dive Map",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0369A1",
+  "theme_color": "#0369A1",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
