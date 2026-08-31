@@ -18,7 +18,7 @@ V2 of the dive map will add video playback at dive site pins. Need a player that
 | **MediaElement.js** | ~80 KB | Fair | Dated, Flash fallback irrelevant |
 
 ### Plyr (V2 choice)
-- 30 KB gzipped — minimal impact on page load
+- 30 KB gzipped: minimal impact on page load
 - Clean, accessible UI with customizable controls
 - Easy to initialize: `new Plyr('#player')`
 - Supports MP4, WebM, YouTube embeds, Vimeo embeds
@@ -26,7 +26,7 @@ V2 of the dive map will add video playback at dive site pins. Need a player that
 
 ### Vidstack (future consideration)
 - Modern web component architecture
-- Tree-shakeable — only load what you use
+- Tree-shakeable: only load what you use
 - Plyr and Vidstack maintainers merged efforts into Video.js v10, but Vidstack remains independently usable
 - Better for complex use cases (HLS, DASH streaming)
 
@@ -57,13 +57,13 @@ Popups are small, clip on mobile, and fight with map gestures. Best practice:
 - **Format:** MP4 (H.264) as universal fallback; WebM (VP9) for 40-60% size savings
 - **Resolution:** 720p is sufficient for 30s-3min clips (~5 MB/minute)
 - **Compression:** Variable bitrate, target 2,500-3,000 kbps for 720p
-- **Color correction:** Apply white-balance before encoding — raw underwater blue/green casts compress poorly
+- **Color correction:** Apply white-balance before encoding, raw underwater blue/green casts compress poorly
 - **Thumbnails:** Generate poster frames with FFmpeg: `ffmpeg -i clip.mp4 -ss 2 -frames:v 1 thumb.jpg`
 
 ## Decision Rationale
 
 Native `<video>` + Plyr for V2 because:
-1. 30 KB total bundle addition — keeps the site fast
+1. 30 KB total bundle addition: keeps the site fast
 2. Sidebar/modal pattern works naturally with the existing Leaflet map
 3. Supports both self-hosted MP4 and YouTube/Vimeo embeds
 4. Plyr gives a polished, consistent UI without the weight of Video.js

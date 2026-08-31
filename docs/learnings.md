@@ -1,4 +1,4 @@
-# Dive Map — Project Learnings
+# Dive Map: Project Learnings
 
 Retrospective on building V1 of the interactive dive map from idea to live site.
 
@@ -6,11 +6,11 @@ Retrospective on building V1 of the interactive dive map from idea to live site.
 
 ### 1. Research-first approach paid off
 
-Starting with three research documents (maps, hosting, video) before writing any code meant we made informed technology choices from the start. Leaflet.js was picked over MapLibre GL JS specifically because V1 didn't need vector tiles or 3D terrain — it needed to ship fast. The research also documented the upgrade path to MapLibre for V3 (dive computer data with depth profiles), so the migration plan already exists when it's needed.
+Starting with three research documents (maps, hosting, video) before writing any code meant we made informed technology choices from the start. Leaflet.js was picked over MapLibre GL JS specifically because V1 didn't need vector tiles or 3D terrain: it needed to ship fast. The research also documented the upgrade path to MapLibre for V3 (dive computer data with depth profiles), so the migration plan already exists when it's needed.
 
 ### 2. Data-driven architecture from day one
 
-Every pin on the map comes from `data/dives.json` — no hardcoded HTML, no per-dive templates. This one decision enabled:
+Every pin on the map comes from `data/dives.json`: no hardcoded HTML, no per-dive templates. This one decision enabled:
 - Adding 94 dives from email logs without touching any JS/HTML
 - Swapping the Sipadan placeholder for 11 detailed entries with a Python script
 - The stats in the header auto-computing from the data (dive count, trip count, country count)
@@ -18,7 +18,7 @@ Every pin on the map comes from `data/dives.json` — no hardcoded HTML, no per-
 
 ### 3. Gmail as a data source
 
-Using Gmail MCP tools to read self-emailed dive logs turned unstructured notes into structured JSON. The dive logs had inconsistent formatting (some had depth, some didn't; dates written three different ways), but parsing them once into a canonical JSON schema normalized everything. The personal notes and highlights came through — things like "Simon literally hugged the group" and "felt like swimming around an underwater village" give each pin character that a simple lat/lng list wouldn't have.
+Using Gmail MCP tools to read self-emailed dive logs turned unstructured notes into structured JSON. The dive logs had inconsistent formatting (some had depth, some didn't; dates written three different ways), but parsing them once into a canonical JSON schema normalized everything. The personal notes and highlights came through: things like "Simon literally hugged the group" and "felt like swimming around an underwater village" give each pin character that a simple lat/lng list wouldn't have.
 
 ### 4. Shipping incrementally
 
@@ -43,7 +43,7 @@ GitHub Pages caches static files aggressively through Fastly CDN. After the firs
 Pure HTML/CSS/JS with CDN dependencies (Leaflet, MarkerCluster) means:
 - No `npm install`, no webpack, no build step
 - Edit a file, push, it's live in 60 seconds
-- Any browser can view the source — no transpilation obscuring the code
+- Any browser can view the source: no transpilation obscuring the code
 - GitHub Pages deploys automatically with no CI/CD configuration
 
 For a personal project at this scale, a build system would have added complexity with zero benefit.
@@ -72,7 +72,7 @@ The backwards-from-156 numbering means adding or removing dives requires renumbe
 
 ## V2 priorities (informed by V1)
 
-1. **Video integration** — The `media: []` field already exists in every dive entry. V2 adds a player (Plyr.js or similar) triggered from popups.
-2. **Sidebar/detail panel** — Dense areas like Sipadan need a list view, not just spiderfied pins.
-3. **Photo thumbnails** — Quick visual preview in popups before opening the full media viewer.
-4. **Search/filter** — Filter by trip, country, dive type, or highlight tags.
+1. **Video integration.** The `media: []` field already exists in every dive entry. V2 adds a player (Plyr.js or similar) triggered from popups.
+2. **Sidebar/detail panel.** Dense areas like Sipadan need a list view, not just spiderfied pins.
+3. **Photo thumbnails.** Quick visual preview in popups before opening the full media viewer.
+4. **Search/filter.** Filter by trip, country, dive type, or highlight tags.

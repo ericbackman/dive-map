@@ -19,7 +19,7 @@ Static site (HTML/CSS/JS) with ~150 map pins. Future versions add embedded video
 | **Surge.sh** | Undisclosed | Undisclosed | Paid only | No | Yes |
 
 ### GitHub Pages (V1 choice)
-- Simplest path — already using GitHub, zero additional accounts
+- Simplest path: already using GitHub, zero additional accounts
 - Auto-deploys via GitHub Actions or direct from branch
 - 1 GB site limit is fine for HTML/CSS/JS + JSON data
 - Must be public repo on free plan
@@ -32,12 +32,12 @@ Static site (HTML/CSS/JS) with ~150 map pins. Future versions add embedded video
 - Best choice if the map gets shared widely or traffic spikes
 
 ### Netlify
-- Credit-based pricing (changed Sept 2025) — less transparent limits
+- Credit-based pricing (changed Sept 2025): less transparent limits
 - Deploy previews and serverless functions are nice but unnecessary here
 - Site pauses when credits run out
 
 ### Vercel
-- Optimized for Next.js — overkill for pure static
+- Optimized for Next.js: overkill for pure static
 - 100 MB CLI upload limit
 - Hobby plan is personal/non-commercial only
 
@@ -58,7 +58,7 @@ Static site (HTML/CSS/JS) with ~150 map pins. Future versions add embedded video
 ## Decision Rationale
 
 GitHub Pages for V1 because:
-1. Zero additional account setup — already on GitHub
+1. Zero additional account setup: already on GitHub
 2. Push to `main` and it deploys
 3. 150-pin map with JSON data is well within limits
 4. Custom domain support when ready

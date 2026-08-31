@@ -11,7 +11,7 @@ Need a JavaScript map library for an interactive dive map with ~150 pins, click 
 
 ### Leaflet.js (V1 choice)
 - **Cost:** Free, MIT license. OpenStreetMap/CARTO tiles are free with no API key.
-- **Bundle:** ~42 KB gzipped — lightest option by far.
+- **Bundle:** ~42 KB gzipped, lightest option by far.
 - **Markers/Popups:** First-class HTML popups with custom icons, click events. Best ecosystem for this.
 - **Mobile:** Responsive out of the box, touch/pinch-zoom.
 - **Video:** Can embed `<video>` or iframes directly in HTML popups.
@@ -22,7 +22,7 @@ Need a JavaScript map library for an interactive dive map with ~150 pins, click 
 ### MapLibre GL JS (recommended upgrade path)
 - **Cost:** Free, BSD-3 license. MapTiler free tier covers 100K tiles/month.
 - **Bundle:** ~290 KB gzipped.
-- **Rendering:** WebGL-based vector tiles — smooth 60fps zoom, dynamic styling.
+- **Rendering:** WebGL-based vector tiles, smooth 60fps zoom, dynamic styling.
 - **Satellite:** Vector tiles with satellite options from MapTiler or Esri.
 - **Future-proof:** Handles data overlays (depth charts, heatmaps) cleanly.
 - **Backed by:** AWS, Microsoft, Meta. Rapidly growing community.
@@ -50,9 +50,9 @@ Need a JavaScript map library for an interactive dive map with ~150 pins, click 
 
 Leaflet for V1 because:
 1. Zero build step — CDN script tags, works on GitHub Pages immediately
-2. Smallest bundle (42 KB) — fast load on any connection
+2. Smallest bundle (42 KB): fast load on any connection
 3. HTML popups are perfect for embedding future video players
-4. 150 pins is trivial — no performance concerns
+4. 150 pins is trivial: no performance concerns
 5. Upgrade path to MapLibre is well-documented when V3 data overlays arrive
 
 ## Tile Provider Choice
