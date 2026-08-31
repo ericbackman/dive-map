@@ -1,6 +1,6 @@
 # dive-map
 
-**[ericbackman.github.io/dive-map](https://ericbackman.github.io/dive-map/)** — an
+**[ericbackman.github.io/dive-map](https://ericbackman.github.io/dive-map/)**, an
 interactive world map of every scuba dive I've logged: **147 dives, 20 trips, 11
 countries, 2013–2024**.
 
@@ -9,13 +9,13 @@ Click a pin for the site, date, depth, dive type and what was actually down ther
 ## Why it's built this way
 
 No build step, no framework, no API keys. It is a static `index.html` plus one
-JSON file, served straight from GitHub Pages — which means it cannot break in a
+JSON file, served straight from GitHub Pages, which means it cannot break in a
 dependency update, costs nothing to run, and will still load in ten years.
 
-- **Map** — Leaflet 1.9.4 from a CDN
-- **Tiles** — CARTO Dark Matter (free, keyless)
-- **Data** — `data/dives.json`, hand-curated from my dive logs
-- **Hosting** — GitHub Pages off `main`
+- **Map.** Leaflet 1.9.4 from a CDN
+- **Tiles.** CARTO Dark Matter (free, keyless)
+- **Data**: `data/dives.json`, hand-curated from my dive logs
+- **Hosting.** GitHub Pages off `main`
 
 ## The data
 
@@ -39,7 +39,7 @@ Each dive:
 }
 ```
 
-`rating` is nullable — the early logs predate my rating them.
+`rating` is nullable: the early logs predate my rating them.
 
 Site types: `reef` (110), `wall` (12), `drift` (10), `night` (7), `wreck` (4),
 plus `cave`, `cenote`, `crater`, `sinkhole`, `freshwater`.
@@ -48,7 +48,7 @@ Depths run 6.1–37.0 m (median 20.5 m).
 
 ## Running it locally
 
-Any static server — there's nothing to compile:
+Any static server: there's nothing to compile:
 
 ```bash
 python -m http.server 8000
@@ -69,18 +69,18 @@ scripts/            one-off helpers (log import, video classification)
 analysis/breathing/ dive-computer breathing-rate analysis (separate from the map)
 ```
 
-`scripts/` and `analysis/` are working tools, not part of the deployed site — the
+`scripts/` and `analysis/` are working tools, not part of the deployed site: the
 page only needs `index.html`, `css/`, `js/` and `data/`.
 
 ## Roadmap
 
-- **V1 (now)** — map, pins, popups
-- **V2** — video album per site (`media` is already in the schema, currently empty)
-- **V3** — dive-computer profiles: depth over time, temperature
-- **V4** — written dive logs
+- **V1 (now).** Map, pins, popups
+- **V2.** Video album per site (`media` is already in the schema, currently empty)
+- **V3.** Dive-computer profiles: depth over time, temperature
+- **V4.** Written dive logs
 
 ## Notes
 
-Coordinates are approximate site locations, not exact GPS entries — dive sites
+Coordinates are approximate site locations, not exact GPS entries: dive sites
 are areas, and a few are deliberately fuzzed. Nothing here is a navigation aid;
 dive with a guide and your own plan.
