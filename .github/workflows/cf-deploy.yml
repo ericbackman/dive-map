@@ -14,9 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Stage site
+        # docs/ and analysis/ are internal working notes, not part of the site.
+        # They were published at dive.ericbackman.com/docs/ until 2026-08-30.
         run: |
           mkdir -p _site
-          cp -r index.html css data js docs _site/
+          cp -r index.html css data js _site/
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
