@@ -1,0 +1,33 @@
+name: Video liveness
+
+# The silence alarm for dive-map's content.
+#
+# dive-map embeds clips from the RAW-STOCK bucket of the Scuba Sessions channel,
+# which that project treats as disposable. On 2026-08-30 an audit found 23 of 116
+# videos (20%) had been deleted, including one front-page bestVideo. Hosts were
+# green, deploys were green, and nothing noticed. This job is what notices.
+#
+# A failed scheduled run emails the repo owner - that is the alert. There is no
+# other notification path, so do not make this job exit 0 on failure.
+
+on:
+  schedule:
+    - cron: '17 9 * * 1'   # Mondays 09:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/dives.json'
+      - 'scripts/check_video_liveness.py'
+      - '.github/workflows/video-liveness.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check every embedded video still exists
+        run: python scripts/check_video_liveness.py

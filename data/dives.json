@@ -20,7 +20,7 @@
       "trip": "Raja Ampat"
     },
     {
-      "id": "ZnQ_bu8gb5A",
+      "id": "1E0L9wCr3XU",
       "title": "Pod of Dolphins",
       "trip": "Red Sea"
     }
@@ -97,12 +97,7 @@
       "year": 2022,
       "dates": "February 19–21, 2022",
       "diveCount": 7,
-      "videos": [
-        {
-          "id": "iw3DXeMtQeM",
-          "title": "Spotted Moray Eel on a Night Dive"
-        }
-      ]
+      "videos": []
     },
     {
       "id": "hawaii-2022",
@@ -149,20 +144,8 @@
           "title": "Colorful Coral Reef With Yellow Tangs"
         },
         {
-          "id": "tJyxxWV7bRM",
-          "title": "Moray Eel In Reef"
-        },
-        {
           "id": "O_HJb3l_fpI",
           "title": "Diver Interacting With Octopus"
-        },
-        {
-          "id": "yEIv4XT4CxE",
-          "title": "Underwater Cave With Sun Rays"
-        },
-        {
-          "id": "yRHgnqRoZSo",
-          "title": "Green Sea Turtle Swimming Over Coral Reef"
         },
         {
           "id": "0QkoWeVmTYg",
@@ -211,20 +194,12 @@
           "title": "Fish On Sandy Reef Floor"
         },
         {
-          "id": "tK1621jVVSE",
-          "title": "Eagle Ray Gliding Over Seabed"
-        },
-        {
           "id": "RiCAMpyq2HA",
           "title": "Diver And Clown Triggerfish Over Reef"
         },
         {
           "id": "-EAS8p_Gp_E",
           "title": "Swimming Sea Turtle"
-        },
-        {
-          "id": "pnbXR4xqT6U",
-          "title": "Green Sea Turtle Swimming"
         },
         {
           "id": "0TXuAivb7Qk",
@@ -247,12 +222,7 @@
       "year": 2023,
       "dates": "February 16-20, 2023",
       "diveCount": 17,
-      "videos": [
-        {
-          "id": "m911PGqxumw",
-          "title": "White Mouth Moray Eel On Reef"
-        }
-      ]
+      "videos": []
     },
     {
       "id": "cambodia-2023",
@@ -405,36 +375,16 @@
           "title": "Garden Eel Field"
         },
         {
-          "id": "xSzDX84PYWw",
-          "title": "Cuttlefish On Coral Reef"
-        },
-        {
           "id": "MkTaf-4Kd04",
           "title": "Shark Swimming Over Sandy Bottom"
         },
         {
-          "id": "gHvPNtY5Nww",
-          "title": "Reef Shark Swimming Over Coral And Sand"
-        },
-        {
-          "id": "fyTDr_nfzh4",
+          "id": "_D_kvfM7WYI",
           "title": "Green Sea Turtle Resting On Coral"
         },
         {
-          "id": "cjL3XPU9574",
+          "id": "3WdZ4oqT4pM",
           "title": "Gray Reef Shark Over Coral Reef"
-        },
-        {
-          "id": "lx8OgY5dJos",
-          "title": "Manta Ray Swimming"
-        },
-        {
-          "id": "NvbFNYWgoM4",
-          "title": "Giant Manta Ray"
-        },
-        {
-          "id": "auMsoFxhH20",
-          "title": "Black Manta Ray With Remoras"
         }
       ]
     },
@@ -533,10 +483,6 @@
           "title": "Camouflaged Flatfish On Sand"
         },
         {
-          "id": "zqgHl61eMBY",
-          "title": "School Of Barracuda Over Reef"
-        },
-        {
           "id": "XMOrBuDpTeo",
           "title": "School Of Barracuda In Blue Water"
         },
@@ -549,11 +495,7 @@
           "title": "Barracuda Over Coral Reef"
         },
         {
-          "id": "TXjSsJtTngE",
-          "title": "Silky Shark Swimming In Blue Water"
-        },
-        {
-          "id": "iog2uLG6sFs",
+          "id": "Sg-8pPg7SRw",
           "title": "Two Dolphins Swimming"
         },
         {
@@ -561,19 +503,15 @@
           "title": "Spinner Dolphin Pod Swimming"
         },
         {
-          "id": "wHNzwX8hCiE",
+          "id": "6ZAZauCC1qQ",
           "title": "Pod Of Dolphins In Blue Water"
-        },
-        {
-          "id": "hMMWcaRCCIM",
-          "title": "Oceanic Manta Ray Swimming"
         },
         {
           "id": "N0JxfhFaFTw",
           "title": "Large School Of Dolphins Swimming"
         },
         {
-          "id": "ZnQ_bu8gb5A",
+          "id": "1E0L9wCr3XU",
           "title": "Large Pod Of Dolphins"
         },
         {
@@ -590,10 +528,6 @@
       "dates": "April 22-27, 2024",
       "diveCount": 12,
       "videos": [
-        {
-          "id": "r6QHuzIFrjg",
-          "title": "Green Moray Eel on Reef"
-        },
         {
           "id": "4nDTflBh41M",
           "title": "Green Moray Eel in Coral Reef"
@@ -659,14 +593,6 @@
         {
           "id": "V0vNrTAbKJo",
           "title": "Stingray Under Coral Ledge"
-        },
-        {
-          "id": "gct3HnEQHHI",
-          "title": "Green Moray Eel and Lionfish"
-        },
-        {
-          "id": "h2Eg7Az5PgY",
-          "title": "Manta Ray Swimming Over Reef"
         }
       ]
     }

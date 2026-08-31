@@ -1,0 +1,21 @@
+# GitHub Pages serves this repo's root directly (legacy Jekyll build), so every
+# working file was publicly readable: dive-map/docs/learnings.md and the scripts/
+# helpers both returned real content until 2026-08-30.
+#
+# Cloudflare Pages is unaffected either way - it falls back to index.html for
+# unknown paths - but GitHub Pages serves the actual bytes, so the exclusion has
+# to happen here.
+#
+# Only index.html, css/, js/ and data/ are part of the site.
+
+exclude:
+  - CLAUDE.md
+  - PLAYBOOK.md
+  - README.md
+  - analysis/
+  - docs/
+  - research/
+  - scripts/
+  - requirements.txt
+  - .env.example
+  - .mcp.json.example
