@@ -26,7 +26,7 @@ dive-map/
 - **Tiles**: CARTO Dark Matter (free, no API key)
 - **Data**: Static JSON (`data/dives.json`)
 - **Hosting**: GitHub Pages (static files, auto-deploy)
-- **No build tools** — pure HTML/CSS/JS, edit and push
+- **No build tools.** Pure HTML/CSS/JS, edit and push
 
 ## Version roadmap
 
@@ -46,9 +46,9 @@ npx serve .
 
 ## Conventions
 
-- All dive data lives in `data/dives.json` — add new dives there
+- All dive data lives in `data/dives.json`: add new dives there
 - Coordinates are decimal degrees (lat, lng)
-- Marker popups render from data — no hardcoded HTML per dive
+- Marker popups render from data: no hardcoded HTML per dive
 - Keep JS modular: `map.js` for map logic, `app.js` for orchestration
 - CSS uses custom properties (vars) for the ocean color palette
 
