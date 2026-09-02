@@ -163,3 +163,27 @@ quota worth watching.
   reality, wrote this playbook. **Not marked stable**: the 10 `cayman-2026`
   dives are still missing dates, depths and notes, and two clips remain
   misattributed.
+
+### 2026-09-01: finalized, STABLE
+
+`/finalize` passed: 7 checks, 0 failures. Both hosts respond as declared, the repo
+is clean and in sync, and the project holds no state outside git, so GitHub is the
+backup and "restore" is a clone plus a push to main.
+
+This is the second attempt. The 2026-08-30 run REFUSED it: 23 of 116 video embeds
+(20%) were dead and nothing detected them. PR #7 repaired them and added the weekly
+`video-liveness` workflow; PR #8 corrected a stale dive count in the meta
+description. Both are merged, and the workflow has run green.
+
+Accepted caveats, recorded rather than waved through:
+
+- **GitHub disables scheduled workflows after 60 days of repo inactivity.** A
+  finished project is inactive by definition, so `video-liveness` is most likely to
+  switch itself off exactly when dive-map is healthiest. This is the single most
+  likely route out of stable and nothing currently detects it.
+- `video-liveness` alerts only through GitHub's email on a failed scheduled run.
+  There is no Discord or ntfy path, so it sits outside `run-job.ps1` and the estate
+  digest, and the finalize record's `jobs` list is empty for that reason rather
+  than because nothing runs.
+- Four stale remote branches, oldest 2026-06-01. They mislead a reader but cannot
+  affect operation.
