@@ -14,9 +14,16 @@ const DiveMap = {
       worldCopyJump: true,
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
+    // Esri dark canvas, no API key. CARTO's free CDN began stamping
+    // "API KEY REQUIRED" across every tile (found 2026-09-09) - it watermarks a
+    // 200 response rather than failing, so no status check could catch it.
+    // NOTE the path order: Esri is {z}/{y}/{x}, y BEFORE x, unlike OSM and CARTO.
+    // The canvas Base has no labels, so Reference is stacked over it.
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://www.esri.com/">Esri</a>',
+      maxZoom: 20,
+    }).addTo(this.map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 20,
     }).addTo(this.map);
 
