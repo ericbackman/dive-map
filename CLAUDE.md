@@ -30,7 +30,9 @@ dive-map/
 
 - **Map**: Leaflet 1.9.4 via CDN (no build step), plus markercluster 1.5.3 and
   leaflet-ant-path 1.3.0
-- **Tiles**: CARTO Dark Matter (free, no API key)
+- **Tiles**: Esri canvas, `World_Dark_Gray_Base` with `World_Dark_Gray_Reference`
+  stacked over it for labels (free, no API key). Moved off CARTO on 2026-09-09.
+  The path order is `{z}/{y}/{x}`, y before x
 - **Data**: Static JSON (`data/dives.json`)
 - **Video**: YouTube iframe embeds, thumbnails from `img.youtube.com`
 - **Hosting**: dual-served, see below
