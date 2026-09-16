@@ -13,7 +13,7 @@ No build step, no framework, no API keys. It is a static `index.html` plus one
 JSON file, so it costs nothing to run and will still load in ten years.
 
 - **Map.** Leaflet 1.9.4 from a CDN, with markercluster and ant-path
-- **Tiles.** CARTO Dark Matter (free, keyless)
+- **Tiles.** Esri canvas, a dark base plus a reference layer for labels (free, keyless)
 - **Data.** `data/dives.json`, hand-curated from my dive logs
 - **Video.** YouTube embeds, hosted on the Scuba Sessions channel
 - **Hosting.** Cloudflare Pages and GitHub Pages, both on push to `main`

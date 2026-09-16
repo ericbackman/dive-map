@@ -64,7 +64,7 @@ The backwards-from-156 numbering means adding or removing dives requires renumbe
 | Decision | Why | Trade-off |
 |----------|-----|-----------|
 | Leaflet over MapLibre | Simpler API, smaller bundle, no build step needed for V1 | Loses vector tiles, 3D terrain, GPU rendering |
-| CARTO Dark Matter tiles | Free, no API key, dark ocean aesthetic matches the diving theme | Less detail than satellite imagery |
+| CARTO Dark Matter tiles | Free, no API key, dark ocean aesthetic matches the diving theme | Less detail than satellite imagery. Reversed on 2026-09-09: CARTO began stamping "API KEY REQUIRED" across keyless tiles, watermarking a 200 response rather than failing, so no status check caught it. The map now uses Esri canvas tiles |
 | GitHub Pages over Netlify | Already using GitHub for the repo, free, zero config for static sites | No server-side rendering, no environment variables |
 | Static JSON over API | No backend to maintain, data changes through git commits | Manual editing, no real-time updates |
 | MarkerCluster plugin | Handles 100+ pins without performance issues, trip-aware grouping | External dependency, custom styling needed to match theme |

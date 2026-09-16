@@ -149,7 +149,7 @@ or Komodo. Treat every species name as a claim to check.
 
 ## 7. Cost and quota
 
-Zero. Cloudflare Pages free tier, GitHub Pages free tier, YouTube embeds, CARTO
+Zero. Cloudflare Pages free tier, GitHub Pages free tier, YouTube embeds, Esri canvas
 tiles keyless. The weekly Actions run is a handful of seconds. Nothing here has a
 quota worth watching.
 

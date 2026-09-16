@@ -10,7 +10,7 @@ Need a JavaScript map library for an interactive dive map with ~150 pins, click 
 ## Libraries Evaluated
 
 ### Leaflet.js (V1 choice)
-- **Cost:** Free, MIT license. OpenStreetMap/CARTO tiles are free with no API key.
+- **Cost:** Free, MIT license. OpenStreetMap/CARTO tiles are free with no API key. (CARTO's keyless tiles were withdrawn in 2026; see Tile Provider Choice below.)
 - **Bundle:** ~42 KB gzipped, lightest option by far.
 - **Markers/Popups:** First-class HTML popups with custom icons, click events. Best ecosystem for this.
 - **Mobile:** Responsive out of the box, touch/pinch-zoom.
@@ -56,6 +56,12 @@ Leaflet for V1 because:
 5. Upgrade path to MapLibre is well-documented when V3 data overlays arrive
 
 ## Tile Provider Choice
+
+> Superseded on 2026-09-09. CARTO now stamps "API KEY REQUIRED" diagonally across
+> every tile served without a key, and does it by watermarking a 200 response rather
+> than failing, so every status check stayed green. The map moved to Esri canvas tiles:
+> a dark base plus a reference layer, because the Esri base carries no labels. The rest
+> of this section records the original V1 decision.
 
 CARTO Dark Matter tiles selected for V1:
 - Free, no API key required
