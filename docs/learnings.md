@@ -18,7 +18,7 @@ Every pin on the map comes from `data/dives.json`: no hardcoded HTML, no per-div
 
 ### 3. Gmail as a data source
 
-Using Gmail MCP tools to read self-emailed dive logs turned unstructured notes into structured JSON. The dive logs had inconsistent formatting (some had depth, some didn't; dates written three different ways), but parsing them once into a canonical JSON schema normalized everything. The personal notes and highlights came through: things like "Simon literally hugged the group" and "felt like swimming around an underwater village" give each pin character that a simple lat/lng list wouldn't have.
+Using Gmail MCP tools to read self-emailed dive logs turned unstructured notes into structured JSON. The dive logs had inconsistent formatting (some had depth, some didn't; dates written three different ways), but parsing them once into a canonical JSON schema normalized everything. The personal notes and highlights came through: things like "the divemaster literally hugged the group" and "felt like swimming around an underwater village" give each pin character that a simple lat/lng list wouldn't have.
 
 ### 4. Shipping incrementally
 
